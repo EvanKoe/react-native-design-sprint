@@ -48,10 +48,14 @@ export const Clickable: FC<Props> = ({
       borderWidth: 2
     },
     container: {
-      borderRadius: 12,
+      borderRadius: 20,
       paddingVertical: 10,
       paddingHorizontal: 20,
-      marginVertical: 5
+      marginVertical: 5,
+      marginHorizontal: 5,
+      backgroundColor: colors.grey800,
+      justifyContent: 'center',
+      alignContent: 'center'
     },
     textStyle: {
       alignSelf: 'center',
@@ -87,7 +91,7 @@ export const Clickable: FC<Props> = ({
           primary && {backgroundColor: primaryColor},
           secondary && styles.secondaryTouchable,
           disabled && {backgroundColor: colors.grey700},
-          style
+          style && style
         ]}
       >
         <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
