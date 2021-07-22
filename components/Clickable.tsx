@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import {
   Text,
   TouchableOpacity,
@@ -12,19 +12,20 @@ import { AntDesign } from '@expo/vector-icons';
 import colors from '../resources/colors';
 
 interface Props {
-  primary?: boolean;
-  secondary?: boolean;
-  disabled?: boolean;
+  primary?: boolean;                  // buttonStyle : primary
+  secondary?: boolean;                // buttonStyle : secondary
+  disabled?: boolean;                 // make the button not clickable
 
-  primaryColor?: string;
-  callback?: () => void;
-  textStyle?: StyleProp<TextStyle>;
-  iconStyle?: StyleProp<TextStyle>;
-  style?: StyleProp<ViewStyle>;
-  icon?: any;
-  iconSize?: number;
-  iconColor?: string;
-  text?: string;
+  primaryColor?: string;              // precise a color which the button will be built on
+  callback?: () => void;              // function to call when clicked
+  textStyle?: StyleProp<TextStyle>;   // style to be applied on the button text
+  iconStyle?: StyleProp<TextStyle>;   // style to be applied on the button icon
+  style?: StyleProp<ViewStyle>;       // style to be applied on the main layout
+  icon?: any;                         // icon name (AntDesign)
+  iconSize?: number;                  // icon size (px)
+  iconColor?: string;                 // icon color
+  text?: string;                      // text to be displayed in the button
+  shadow?: boolean;                   // makes a little shadow with borders
 }
 
 export const Clickable: FC<Props> = ({
@@ -40,7 +41,10 @@ export const Clickable: FC<Props> = ({
   iconSize = 24,
   iconColor = 'empty',
   text = 'Click here',
+  shadow = false
 }) => {
+  const [iconFColor, setIconColor] = useState('');
+
   const styles = StyleSheet.create({
     secondaryTouchable: {
       backgroundColor: colors.grey800,
@@ -60,26 +64,14 @@ export const Clickable: FC<Props> = ({
     textStyle: {
       alignSelf: 'center',
       fontWeight: 'bold'
+    },
+    shadow: {
+      borderLeftColor: colors.grey60,
+      borderLeftWidth: 2,
+      borderBottomColor: colors.grey60,
+      borderBottomWidth: 2
     }
   });
-
-  const [iconFColor, setIconColor] = useState('');
-
-  useEffect(() => {
-    setIconColor(colors.black);
-    if (iconColor !== 'empty')
-      setIconColor(iconColor);
-    else {
-      if (primary)
-        setIconColor(colors.white);
-      else if (secondary)
-        setIconColor(primaryColor);
-      else if (disabled)
-        setIconColor(colors.grey100);
-    }
-  }, []);
-
-  console.log(primary, secondary, disabled, '\n')
 
   return (
     <>
@@ -91,6 +83,7 @@ export const Clickable: FC<Props> = ({
           primary && {backgroundColor: primaryColor},
           secondary && styles.secondaryTouchable,
           disabled && {backgroundColor: colors.grey700},
+          shadow && styles.shadow,
           style && style
         ]}
       >
@@ -98,7 +91,13 @@ export const Clickable: FC<Props> = ({
           <AntDesign
             name={icon}
             size={iconSize}
-            color={iconFColor}
+            color={
+              primary ? colors.white :
+              secondary ? primaryColor :
+              disabled ? colors.grey100 :
+              iconColor ? iconColor :
+              colors.black
+            }
             style={[
               styles.textStyle,
               iconStyle

@@ -1,40 +1,39 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState } from 'react';
 import {
   TextInput,
-  Text,
-  TouchableOpacity,
   StyleProp,
   ViewStyle,
   TextStyle,
   StyleSheet,
   View
 } from 'react-native';
-import { AntDesign, MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import colors from '../resources/colors';
-import { onFinishCommand } from 'yargs';
 
 interface Props {
-  type?: string;
-  placeholder?: string;
-  placeholderColor: string;
-  style?: StyleProp<ViewStyle>;
-  textStyle?: StyleProp<TextStyle>;
-  onFinished?: () => void;
-  onCharTyped?: () => void;
-  required?: boolean;
-  value?: string;
+  type?: string;                          // type : email, password, text...
+  placeholder?: string;                   // placeholder : text displayed when no text
+  placeholderColor?: string;              // color of placeholder
+  style?: StyleProp<ViewStyle>;           // style to be applied to main view
+  textStyle?: StyleProp<TextStyle>;       // style to be applied to text (not placeholder)
+  onFinished?: () => void;                // function to call when user finished typing
+  onCharTyped?: (e: string) => void;      // function to call when a letter is typed
+  required?: boolean;                     // same as HTML5
+  value?: string;                         // text to be put by default
+  noRegex?: boolean;                      // email : does not display an error if no '@'
 }
 
-export const Input = ({
+export const Input: FC<Props> = ({
   type = 'text',
   placeholder = 'Input text right there',
   style = {},
   textStyle = {},
-  onFinished = (e: string) => console.log('You typed something !'),
+  onFinished = () => console.log('You typed something !'),
   onCharTyped = (e: string) => {},
   required = false,
   value = '',
-  placeholderColor = colors.grey200
+  placeholderColor = colors.grey200,
+  noRegex = false
 }) => {
   const [typedText, setTypedText] = useState('');
   const [borderError, setBorderError] = useState('transparent');
@@ -81,9 +80,9 @@ export const Input = ({
         }}
         onEndEditing={() => {
           setBorderError('transparent');
-          if (required && typedText === '')
+          if (!noRegex && required && typedText === '')
             return setBorderError(colors.red);
-          if (type === 'email') {
+          if (type === 'email' && !noRegex) {
             setBorderError((!typedText || !/^\S+@\S+\.\S+$/.test(typedText)) ?
               colors.red : 'transparent'
             );
