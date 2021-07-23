@@ -4,21 +4,32 @@ import { StyleSheet, Text, SafeAreaView, FlatList, ScrollView, View } from 'reac
 import { Clickable } from './components/Clickable';
 import { Input } from './components/Input';
 import { LoginForm } from './components/Form';
+import { Layout } from './components/Layout';
 import colors from './resources/colors';
+import { Spacer } from './components/Spacer';
+import { Avatar } from './components/Avatar';
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <LoginForm
-        title='Log in'
-        titleStyle={{ paddingBottom: 20 }}
-        buttonType='primary'
-        buttonColor={colors.salmon}
-        buttonStyle={{ borderRadius: 15, paddingVertical: 15 }}
-        buttonSticky='right'
-        buttonShadow
-      />
-    </SafeAreaView>
+    <Layout title='Welcome' dark>
+      <View style={{ flexDirection: 'row' }}>
+        <Avatar
+          text='Evan Koehler'
+          connected='connected'
+        />
+        <Avatar
+          text='Charles'
+          connected='busy'
+        />
+        <Avatar
+          text='Evan Koehler'
+          image="https://cdn.alzashop.com/ImgW.ashx?fd=f16&cd=GMERCHb613do1"
+        />
+        <Avatar
+          text='Philippe'
+        />
+      </View>
+    </Layout>
   );
 ;}
 

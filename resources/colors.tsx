@@ -16,6 +16,7 @@ const colors = {
   grey60: '#222',
   grey50: '#111',
   black: '#000',
+  dark: '#212121',
 
   //? salmon (pink-red)
   salmon: '#ff545d',
@@ -115,7 +116,22 @@ const colors = {
   wtransp200: '#fff7',
   wtransp100: '#fff6',
   wtransp50: '#fff5',
-  wtransp25: '#fff4'
+  wtransp25: '#fff4',
+
+  //? fade red
+  fadeRedLight: '#f66',
+  fadeRed: '#d44',
+  fadeRedDark: '#a22',
+
+  //? fade green
+  fadeGreenLight: '#8f8',
+  fadeGreen: '#6d6',
+  fadeGreenDark: '#4b4',
+
+  //? fade blue
+  fadeBlueLight: '#66f',
+  fadeBlue: '#44d',
+  fadeBlueDark: '#22b'
 };
 
 export default colors;

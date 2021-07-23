@@ -25,7 +25,8 @@ interface Props {
   iconSize?: number;                  // icon size (px)
   iconColor?: string;                 // icon color
   text?: string;                      // text to be displayed in the button
-  shadow?: boolean;                   // makes a little shadow with borders
+  shadow?: string;                    // none/left-right... Displays a little cheated shadow (with border)
+  shadowColor?: string;               // color of the shadow (if shadow)
 }
 
 export const Clickable: FC<Props> = ({
@@ -41,7 +42,8 @@ export const Clickable: FC<Props> = ({
   iconSize = 24,
   iconColor = 'empty',
   text = 'Click here',
-  shadow = false
+  shadow = 'none',
+  shadowColor = colors.grey60
 }) => {
   const [iconFColor, setIconColor] = useState('');
 
@@ -66,10 +68,11 @@ export const Clickable: FC<Props> = ({
       fontWeight: 'bold'
     },
     shadow: {
-      borderLeftColor: colors.grey60,
-      borderLeftWidth: 2,
-      borderBottomColor: colors.grey60,
-      borderBottomWidth: 2
+      borderWidth: 2,
+      borderLeftColor: shadow.includes('left') ? shadowColor : colors.transp,
+      borderBottomColor: shadow.includes('bottom') ? shadowColor : colors.transp,
+      borderRightColor: shadow.includes('right') ? shadowColor : colors.transp,
+      borderTopColor: shadow.includes('top') ? shadowColor : colors.transp
     }
   });
 
@@ -83,7 +86,7 @@ export const Clickable: FC<Props> = ({
           primary && {backgroundColor: primaryColor},
           secondary && styles.secondaryTouchable,
           disabled && {backgroundColor: colors.grey700},
-          shadow && styles.shadow,
+          shadow !== 'none' && styles.shadow,
           style && style
         ]}
       >
