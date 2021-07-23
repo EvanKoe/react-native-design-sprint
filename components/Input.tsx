@@ -21,6 +21,7 @@ interface Props {
   required?: boolean;                     // same as HTML5
   value?: string;                         // text to be put by default
   noRegex?: boolean;                      // email : does not display an error if no '@'
+  disabled?: boolean;                     // disables the input
 }
 
 export const Input: FC<Props> = ({
@@ -33,7 +34,8 @@ export const Input: FC<Props> = ({
   required = false,
   value = '',
   placeholderColor = colors.grey200,
-  noRegex = false
+  noRegex = false,
+  disabled = false
 }) => {
   const [typedText, setTypedText] = useState('');
   const [borderError, setBorderError] = useState('transparent');
@@ -67,6 +69,7 @@ export const Input: FC<Props> = ({
       style && style
     ]}>
       <TextInput
+        editable={!disabled}
         placeholder={placeholder}
         placeholderTextColor={placeholderColor}
         style={[
