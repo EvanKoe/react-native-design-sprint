@@ -131,7 +131,12 @@ const colors = {
   //? fade blue
   fadeBlueLight: '#66f',
   fadeBlue: '#44d',
-  fadeBlueDark: '#22b'
+  fadeBlueDark: '#22b',
+
+  //? grey-blue
+  greyBlueLight: '#78a',
+  greyBlue: '#457',
+  greyBlueDark: '#234'
 };
 
 export default colors;

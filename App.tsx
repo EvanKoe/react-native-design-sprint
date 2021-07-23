@@ -8,6 +8,7 @@ import { Layout } from './components/Layout';
 import colors from './resources/colors';
 import { Spacer } from './components/Spacer';
 import { Avatar } from './components/Avatar';
+import { DropDown } from './components/DropDown';
 
 const App = () => {
   return (
@@ -16,6 +17,11 @@ const App = () => {
         <Avatar
           text='Evan Koehler'
           connected='connected'
+          size={50}
+        />
+        <Avatar
+          text='Philippe'
+          size={70}
         />
         <Avatar
           text='Charles'
@@ -23,26 +29,39 @@ const App = () => {
         />
         <Avatar
           text='Evan Koehler'
-          image="https://cdn.alzashop.com/ImgW.ashx?fd=f16&cd=GMERCHb613do1"
-        />
-        <Avatar
-          text='Philippe'
+          imageUrl="https://cdn.alzashop.com/ImgW.ashx?fd=f16&cd=GMERCHb613do1"
+          size={150}
         />
       </View>
+      <DropDown
+        list={list}
+        renderItem={(item) => {
+          return (<Text style={styles.dropdownItem}> {item.item.title} </Text>)
+        }}
+        title='Click here !'
+        buttonStyle={{ color: colors.white }}
+      />
     </Layout>
   );
 ;}
 
-export default App;
+const list = [
+  {title: 'bwi'},
+  {title: 'test'},
+  {title: 'bonjour'},
+  {title: 'A'},
+  {title: 'azertyuiopqsdfghkjlmwxcvbn'}
+]
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.grey900
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    marginTop: 20
+  dropdownItem: {
+    paddingVertical: 5,
+    backgroundColor: colors.greyBlueDark,
+    paddingHorizontal: 20,
+    color: colors.grey900,
+    fontSize: 20,
+    fontWeight: 'bold'
   }
 });
+
+export default App;
