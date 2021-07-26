@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useRef } from 'react';
-import { StyleSheet, Text, SafeAreaView, FlatList, ScrollView, View } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, FlatList, ScrollView, View, ToastAndroid } from 'react-native';
 import { Clickable } from './components/Clickable';
 import { Input } from './components/Input';
 import { LoginForm } from './components/Form';
@@ -9,15 +9,31 @@ import colors from './resources/colors';
 import { Spacer } from './components/Spacer';
 import { Avatar } from './components/Avatar';
 import { DropDown } from './components/DropDown';
-
+import { Title } from './components/Title';
 import RBSheet from "react-native-raw-bottom-sheet";
+import { LinearGradient } from 'expo-linear-gradient';
 
 const App = () => {
   const slider = useRef();
 
+  const toast = (str: string) => {
+    ToastAndroid.showWithGravity(
+      str,
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER
+    );
+  }
+
   return (
-    <Layout title='Welcome' dark>
-      <View style={{ flexDirection: 'row' }}>
+    <Layout
+      scrollable
+      title='Welcome'
+      titleColor={colors.white}
+      style={{ paddingTop: 15 }}
+      backgroundColor={colors.fadeBlueDark}
+    >
+      <Title medium color={colors.white} bold> Avatars </Title>
+      <View style={{ flexDirection: 'row', paddingHorizontal: 10 }}>
         <Avatar
           text='Evan Koehler'
           connected='connected'
@@ -33,31 +49,26 @@ const App = () => {
         />
         <Avatar
           text='Evan Koehler'
-          imageUrl="https://cdn.alzashop.com/ImgW.ashx?fd=f16&cd=GMERCHb613do1"
+          imageUrl="https://www.seekpng.com/png/full/41-410093_circled-user-icon-user-profile-icon-png.png"
           size={150}
         />
       </View>
+      <Title medium color={colors.white} bold> Dropdown List </Title>
       <DropDown
         list={list}
         renderItem={(item) => {
           return (<Text style={styles.dropdownItem}> {item.item.title} </Text>)
         }}
         title='Open dropdown list !'
-        listStyle={{
-          backgroundColor: colors.grey700,
-          marginHorizontal: 5,
-          borderBottomLeftRadius: 5,
-          borderBottomRightRadius: 5
-        }}
+        listStyle={styles.listStyle}
         buttonStyle={{ borderRadius: 5 }}
-        buttonStyleOnOpen={{ borderTopLeftRadius: 5, borderTopRightRadius: 5 }}
+        buttonStyleOnOpen={styles.buttonStyleOnOpen}
       />
+      <Title medium color={colors.white} bold> Buttons </Title>
       <Clickable
         callback={() => slider.current.open()}
-        text='Open bottom slider'
-        style={{
-          borderRadius: 5
-        }}
+        text='Click here to see the buttons'
+        style={{ borderRadius: 5 }}
         icon='caretup'
       />
       <RBSheet
@@ -65,18 +76,36 @@ const App = () => {
         closeOnDragDown={true}
         customStyles={{
           container: {
-            backgroundColor: colors.grey800,
+            backgroundColor: colors.grey750,
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
             padding: 5
           }
         }}
-        height={500}
+        height={250}
       >
-        <Text> Hi ! </Text>
-        <Text> This is a bottom slider. Drag it down to close it ! </Text>
-        <Text> You can also determine its size, and its style !</Text>
+        <Title big bold> Buttons </Title>
+        <ScrollView horizontal style={styles.buttonScrollView} showsHorizontalScrollIndicator={false} >
+          <Clickable primary text='Primary' icon='infocirlceo'/>
+          <Clickable secondary text='Secondary' icon='exclamationcircleo'/>
+          <Clickable text='Unstyled' icon='questioncircleo'/>
+          <Clickable disabled text='Disabled' icon='closecircleo'/>
+        </ScrollView>
+        <ScrollView horizontal style={styles.buttonScrollView} showsHorizontalScrollIndicator={false} >
+          <Clickable text='Shadowed' shadow='left-bottom' icon='swap' shadowColor={colors.black}/>
+          <Clickable text='Shadowed' shadow='right-top' icon='swap' shadowColor={colors.black}/>
+          <Clickable text='Shadowed' shadow='right-top' icon='swap' shadowColor={colors.orange}/>
+          <Clickable text='Shadowed' shadow='right-top' icon='swap' shadowColor={colors.pink}/>
+        </ScrollView>
       </RBSheet>
+      <Title medium color={colors.white} bold> Titles </Title>
+      <View style={styles.titles}>
+        <Title oofsize center color={colors.red700}>OofSize red title</Title>
+        <Title center big bold>Big bold title</Title>
+        <Title medium center>Medium title</Title>
+        <Title small center bold>Small bold title</Title>
+        <Title center extraSmall right>Extra small title</Title>
+      </View>
     </Layout>
   );
 ;}
@@ -97,6 +126,26 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center'
+  },
+  buttonScrollView: {
+    marginHorizontal: 5
+  },
+  listStyle: {
+    backgroundColor: colors.grey700,
+    marginHorizontal: 5,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5
+  },
+  titles: {
+    backgroundColor: colors.wtransp700,
+    borderRadius: 5,
+    marginHorizontal: 5,
+    paddingVertical: 15
+  },
+  buttonStyleOnOpen: {
+    borderRadius: 5,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0
   }
 });
 

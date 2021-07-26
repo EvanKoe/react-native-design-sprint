@@ -8,6 +8,8 @@ interface Props {
   list: any;                              // list of object that will be displayed as dropdown
   title?: string;                         // title that will be displayed on the button
   renderItem: (e: any) => void;           // function to render each item of the dropdown
+  onOpen: () => void;                     // function to call when dropdown opened
+  onClose: () => void;                    // function to call when dropdown closed
   style?: StyleProp<ViewStyle>;           // style to be applied on the main layout
   listStyle?: StyleProp<ViewStyle>;       // style to be applied on the list
   buttonStyle?: StyleProp<ViewStyle>;     // style to be applied on the dropdown's button
@@ -19,6 +21,8 @@ export const DropDown: FC<Props> = ({
   list = {},
   title = 'Dropdown',
   renderItem = (e: any) => {console.log('Lol you forgot the renderItem function')},
+  onOpen = () => undefined,
+  onClose = () => undefined,
   style = {},
   listStyle = {},
   buttonStyle = {},
@@ -27,25 +31,21 @@ export const DropDown: FC<Props> = ({
 }) => {
   const [listState, setListState] = useState(false);
 
-  const styles = StyleSheet.create({
-    container: {
-      display: (listState ? 'flex' : 'none')
-    }
-  });
-
   return (
     <View style={style}>
       <Clickable
         secondary
-        callback={() => setListState(listState => !listState)}
-        style={[{
-            borderTopLeftRadius: 2,
-            borderTopRightRadius: 2,
-            borderBottomLeftRadius: 0,
-            borderBottomRightRadius: 0,
-            marginBottom: 0
-          }, (listState ? buttonStyleOnOpen : buttonStyle)]
-        }
+        callback={() => {
+          setListState(listState => !listState)
+          if (listState && onOpen)
+            return onOpen()
+          if (!listState && onClose)
+            return onClose()
+        }}
+        style={[
+          { marginBottom: 0 },
+          listState ? buttonStyleOnOpen : buttonStyle
+        ]}
         textStyle={titleStyle}
         text={title}
       />

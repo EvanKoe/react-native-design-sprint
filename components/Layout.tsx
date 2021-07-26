@@ -6,17 +6,22 @@ import {
   TextStyle,
   ViewStyle,
   StyleProp,
-  Text
+  Text,
+  ScrollView
 } from 'react-native';
 import colors from '../resources/colors';
+import { Title } from './Title';
 
 interface Props {
   dark?: boolean;                       // enables dark mode (dark background, light font color...)
   title?: string;                       // displays a big string as title
   titleStyle?: StyleProp<TextStyle>;    // style to be applied to the title
+  titleColor?: string;                  // color to be set on title (less priority than titleStyle)
   titleSize?: number;                   // size of the title (can also be made with titleStyle)
   style?: StyleProp<ViewStyle>;         // style to be applied on the main layout
   children?: any;                       // components inside the layout
+  scrollable?: boolean;                 // set the scrollable state for the layout
+  backgroundColor?: string;             // set a custom background color
 };
 
 export const Layout: FC<Props> = ({
@@ -24,28 +29,30 @@ export const Layout: FC<Props> = ({
   title = '',
   titleStyle = {},
   titleSize = 50,
+  titleColor = colors.black,
   style = {},
-  children = {}
+  children = undefined,
+  scrollable = false,
+  backgroundColor = dark ? colors.dark : colors.grey800
 }) => {
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: dark ? colors.dark : colors.grey800,
+      backgroundColor: backgroundColor,
       flex: 1,
-      paddingTop: 30
+      height: '100%'
     },
     title: {
-      color: dark ? colors.white : colors.black,
       fontWeight: 'bold',
       fontSize: titleSize
     }
   });
 
   return (
-    <View style={[styles.container, style]}>
+    <ScrollView scrollEnabled={scrollable} style={[{ height: '100%' }, styles.container, style]} >
       {(title !== '') && (
-        <Text style={[styles.title, titleStyle]}> {title} </Text>
+        <Title oofsize style={[styles.title, titleStyle]} color={titleColor}> {title} </Title>
       )}
       {(children !== undefined) && children}
-    </View>
+    </ScrollView>
   );
 };
