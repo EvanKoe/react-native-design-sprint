@@ -43,11 +43,21 @@ const App = () => {
           return (<Text style={styles.dropdownItem}> {item.item.title} </Text>)
         }}
         title='Open dropdown list !'
-        listStyle={{ marginHorizontal: 5 }}
+        listStyle={{
+          backgroundColor: colors.grey700,
+          marginHorizontal: 5,
+          borderBottomLeftRadius: 5,
+          borderBottomRightRadius: 5
+        }}
+        buttonStyle={{ borderRadius: 5 }}
+        buttonStyleOnOpen={{ borderTopLeftRadius: 5, borderTopRightRadius: 5 }}
       />
       <Clickable
         callback={() => slider.current.open()}
         text='Open bottom slider'
+        style={{
+          borderRadius: 5
+        }}
         icon='caretup'
       />
       <RBSheet
@@ -65,23 +75,23 @@ const App = () => {
       >
         <Text> Hi ! </Text>
         <Text> This is a bottom slider. Drag it down to close it ! </Text>
+        <Text> You can also determine its size, and its style !</Text>
       </RBSheet>
     </Layout>
   );
 ;}
 
 const list = [
-  {title: 'bwi'},
-  {title: 'test'},
-  {title: 'bonjour'},
-  {title: 'A'},
-  {title: 'azertyuiopqsdfghkjlmwxcvbn'}
+  {title: 'Item 1'},
+  {title: 'Item 2'},
+  {title: 'Item 3'},
+  {title: 'Item 4'},
+  {title: 'Item 5'}
 ]
 
 const styles = StyleSheet.create({
   dropdownItem: {
     paddingVertical: 5,
-    backgroundColor: colors.grey800,
     paddingHorizontal: 20,
     color: colors.red700,
     fontSize: 20,
