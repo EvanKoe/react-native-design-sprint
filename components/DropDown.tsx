@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { Text, FlatList, TouchableOpacity, StyleSheet, StyleProp, View, ViewStyle } from 'react-native';
+import { Text, FlatList, TouchableOpacity, StyleSheet, StyleProp, View, ViewStyle, TextStyle } from 'react-native';
 import colors from '../resources/colors';
 import { Clickable } from './Clickable';
 
@@ -36,7 +36,7 @@ export const DropDown: FC<Props> = ({
       <Clickable
         secondary
         callback={() => setListState(listState => !listState)}
-        style={buttonStyle}
+        style={[buttonStyle, { borderRadius: 2 }]}
         textStyle={titleStyle}
         text={title}
       />
