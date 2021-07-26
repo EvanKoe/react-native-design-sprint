@@ -11,7 +11,6 @@ import { Avatar } from './components/Avatar';
 import { DropDown } from './components/DropDown';
 import { Title } from './components/Title';
 import RBSheet from "react-native-raw-bottom-sheet";
-import { LinearGradient } from 'expo-linear-gradient';
 
 const App = () => {
   const slider = useRef();
