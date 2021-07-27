@@ -8,7 +8,7 @@ Here is a list of the widgets:
 - Avatar (utilisateur) :
 - Clickable (bouton) :
 - colors (a full package of colors) :
-- Dropdown (a button which displays a list on click) :
+- DropDown (a button which displays a list on click) :
 - Form (login form) :
 - Input (a text input) :
 - Layout (an default app layout) :
@@ -60,3 +60,21 @@ export default App;
 | text | no | string | button text | `<Clickable text='Click here !' />` | 'Click here' |
 | shadow | no | string | displays a cheated bordered shadow | `<Clickable shadow='left-top' />` | 'none' |
 | shadowColor | no | string | shadow's color | `<Clickable shadowColor='#000' />` | colors.grey60 |
+
+## colors
+Its a file where many colors are defined. It is used this way : `colors.COLORNAME`. For example : `colors.red900`. Refer to src/colors.tsx to see the list ! 
+  
+## DropDown
+| Option | Mandatory? | Type | Description | Example | Default |
+| --- | --- | --- | ------ | ------ | --- |
+| list | yes | any | list to be displayed when button clicked | `<DropDown list={myList} />` | { } |
+| title | no | string | text on the clickable | `<DropDown title='Click here' />` | 'Dropdown' |
+| renderItem | yes | (item: any) => void | same as FlatList's renderItem | `<DropDown renderItem={(item) => function(item)} />` | console.log('Lol you forgot the renderItem function') |
+| onOpen | no | () => void | function called when dropdown is opened | `<DropDown onOpen={() => console.log('dropdown is open !')} />` | undefined |
+| onClose | no | () => void | function called when dropdown is closed | same as onOpen | undefined |
+| style | no | StyleProp<ViewStyle> | general style | `<DropDown style={{ backgroundColor: '#212121' }} />` | { } |
+| listStyle | no | same as style | style to be applied generally on the list (not on each item !) | same as style | { } |
+| buttonStyle | no | same as style | style applied on the clickable | same as style | { } |
+| titleStyle | no | same as style | style applied on the title (clickable's text) | same as style | { } |
+  
+> If you want to pass style for each item of the list, do it through your renderItem function !
