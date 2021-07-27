@@ -1,12 +1,12 @@
-import { Clickable } from './components/Clickable';
-import { Input } from './components/Input';
-import { LoginForm } from './components/Form';
-import { Layout } from './components/Layout';
-import colors from './resources/colors';
-import { Spacer } from './components/Spacer';
-import { Avatar } from './components/Avatar';
-import { DropDown } from './components/DropDown';
-import { Title } from './components/Title';
+import { Clickable } from './src/Clickable';
+import { Input } from './src/Input';
+import { LoginForm } from './src/Form';
+import { Layout } from './src/Layout';
+import colors from './src/colors';
+import { Spacer } from './src/Spacer';
+import { Avatar } from './src/Avatar';
+import { DropDown } from './src/DropDown';
+import { Title } from './src/Title';
 
 export {
   Clickable,

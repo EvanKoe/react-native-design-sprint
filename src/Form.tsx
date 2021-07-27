@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Clickable } from './Clickable';
 import { Input } from './Input';
 import { View, Text, StyleSheet, ViewStyle, StyleProp, TextStyle } from 'react-native';
-import colors from '../resources/colors';
+import colors from './colors';
 
 interface Props {
   title?: string;                           // title text

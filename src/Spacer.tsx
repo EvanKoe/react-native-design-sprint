@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { View } from 'react-native';
-import colors from "../resources/colors";
+import colors from "./colors";
 
 interface Props {
   vertical?: boolean;     // is this spacer vertical ?

@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { Text, View, Image, StyleSheet, StyleProp, ViewStyle } from 'react-native'
-import colors from '../resources/colors';
+import colors from './colors';
 
 interface Props {
   imageUrl?: string;    // profile pic (url of the image)

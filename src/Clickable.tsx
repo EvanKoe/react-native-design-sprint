@@ -9,7 +9,7 @@ import {
   TextStyle
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import colors from '../resources/colors';
+import colors from './colors';
 
 interface Props {
   primary?: boolean;                  // buttonStyle : primary

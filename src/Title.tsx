@@ -7,7 +7,7 @@ import {
   ViewStyle,
   View
 } from 'react-native';
-import colors from '../resources/colors';
+import colors from './colors';
 
 interface Props {
   style?: StyleProp<TextStyle>;   // style to be applied on the title

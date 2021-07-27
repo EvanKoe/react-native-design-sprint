@@ -1,8 +1,11 @@
 import React, { FC, useState } from 'react';
-import { Text, FlatList, TouchableOpacity, StyleSheet, StyleProp, View, ViewStyle, TextStyle } from 'react-native';
-import colors from '../resources/colors';
+import {
+  FlatList,
+  StyleProp,
+  View,
+  ViewStyle,
+} from 'react-native';
 import { Clickable } from './Clickable';
-
 
 interface Props {
   list: any;                              // list of object that will be displayed as dropdown

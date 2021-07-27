@@ -8,7 +8,7 @@ import {
   View
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import colors from '../resources/colors';
+import colors from './colors';
 
 interface Props {
   type?: string;                          // type : email, password, text...

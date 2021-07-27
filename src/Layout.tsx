@@ -9,7 +9,7 @@ import {
   Text,
   ScrollView
 } from 'react-native';
-import colors from '../resources/colors';
+import colors from './colors';
 import { Title } from './Title';
 
 interface Props {
