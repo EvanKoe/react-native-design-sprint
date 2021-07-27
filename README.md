@@ -36,12 +36,18 @@ export default App;
 
 # Components' options
 ## Avatar
-| Option | Mandatory | Type | Description | Example | Default |
+| Option | Mandatory? | Type | Description | Example | Default |
 | --- | --- | --- | --- | --- | --- |
 | imageUrl | no | string | loads an image into the Avatar | `<Avatar imageUrl="https://www.image.com" />` | 'none' |
 | text | no | string | displays the first letter into the Avatar | `<Avatar text="Evan" />` | 'user' |
-| connected | no | string | changes the color :
-- connected: colors.fadeGreenDark,
-- busy: colors.grey600,
-- none: colors.fadeRedDark
-| `<Avatar connected="connected" />` | 'none' |
+| connected | no | string | changes the color | `<Avatar connected="connected" />` | 'none' |
+| size | no | number | Size of the Avatar (in px) | `<Avatar size={140} />` | 100 |
+
+## Clickable
+| Option | Mandatory? | Type | Description | Example | Default |
+| --- | --- | --- | --- | --- | --- |
+| primary | no | boolean | loads a primary prebuilt style (with primaryColor) | `<Clickable primary />` | false |
+| secondary | no | boolean | same as primary | `<Clickable secondary />` | false |
+| disabled | no | boolean | disables the button | `<Clickable disabled />` | false |
+| primaryColor | if primary or secondary | string | set a colorbase for prebuilt style | colors.red700 |
+| callback | no | () => void | onPress function | `<Clickable callback={() => function()} />` | console.log('You clicked here !') |
