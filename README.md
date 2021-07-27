@@ -50,7 +50,7 @@ export default App;
 | secondary | no | boolean | same as primary | `<Clickable secondary />` | false |
 | disabled | no | boolean | disables the button | `<Clickable disabled />` | false |
 | primaryColor | if primary or secondary | string | set a colorbase for prebuilt style | `<Clickable primaryColor='#000'` | colors.red700 |
-| callback | no | () => void | onPress function | `<Clickable callback={() => function()} />` | console.log('You clicked here !') |
+| callback | no | ( ) => void | onPress function | `<Clickable callback={() => function()} />` | console.log('You clicked here !') |
 | textStyle | no | StyleProp<TextStyle> | applies a style for the button's text | `<Clickable textStyle={{ color: '#fff' }} />` | { } |
 | iconStyle | no | StyleProp<TextStyle> | applies a style for the button's icon | same as textStyle | { } |
 | style | no | StyleProp<ViewStyle> | applies a style for the button | same as textStyle | { } |
@@ -70,11 +70,43 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | list | yes | any | list to be displayed when button clicked | `<DropDown list={myList} />` | { } |
 | title | no | string | text on the clickable | `<DropDown title='Click here' />` | 'Dropdown' |
 | renderItem | yes | (item: any) => void | same as FlatList's renderItem | `<DropDown renderItem={(item) => function(item)} />` | console.log('Lol you forgot the renderItem function') |
-| onOpen | no | () => void | function called when dropdown is opened | `<DropDown onOpen={() => console.log('dropdown is open !')} />` | undefined |
-| onClose | no | () => void | function called when dropdown is closed | same as onOpen | undefined |
+| onOpen | no | ( ) => void | function called when dropdown is opened | `<DropDown onOpen={() => console.log('dropdown is open !')} />` | undefined |
+| onClose | no | ( ) => void | function called when dropdown is closed | same as onOpen | undefined |
 | style | no | StyleProp<ViewStyle> | general style | `<DropDown style={{ backgroundColor: '#212121' }} />` | { } |
 | listStyle | no | same as style | style to be applied generally on the list (not on each item !) | same as style | { } |
 | buttonStyle | no | same as style | style applied on the clickable | same as style | { } |
 | titleStyle | no | same as style | style applied on the title (clickable's text) | same as style | { } |
   
 > If you want to pass style for each item of the list, do it through your renderItem function !
+  
+## Form
+| Option | Mandatory? | Type | Description  | Default |
+| --- | --- | --- | ------ | --- |
+| title | no | string | title text | '' |
+  ex: `<Form title='Login' />`
+| mainStyle | no | StyleProp<ViewStyle> | style on main container (root) | { } |
+  ex: `<Form mainStyle={{ backgroundColor: '#fff8' }} />`
+| titleStyle | no | StyleProp<TextStyle> | style on title | { } |
+  ex: `<Form titleStyle={{ color: '#000' }} />`
+| buttonColor | no | string | color of the button | colors.black |
+  ex: `<Form buttonColor={colors.red400} />`
+| buttonType | no | string | primary/secondary/disabled (linked to clickable) | 'primary' |
+  ex: `<Form buttonType='secondary' />`
+| buttonStyle | no | StyleProp<ViewStyle> | style on button | { } |
+  ex: `<Form buttonStyle={{ backgroundColor: '#fff8' }} />`
+| buttonSticky | no | string | left/center.. make the button float to a side | 'none' |
+  ex: `<Form buttonSticky='right' />`
+| buttonShadow | no | string | none/right-top... displays a cheated shadow using borders | 'none' |
+  ex: `<Form buttonShadow='bottom-right-top' />`
+| buttonShadowColor | no | string | color of the shadow | colors.grey60 |
+  ex: `<Form buttonShadowColor={colors.dark} />`
+| style | no | StyleProp<ViewStyle> | main style | { } |
+  ex: `<Form style={{ backgroundColor: '#fff8' }} />`
+| callback | no | (object: any) => void | function called on submit | console.log('Form callback missing. Please add one.') |
+  ex: `<Form callback={() => console.log('You\'re logged in !')}/>`
+| shadow | no | string | left-bottom.. say where the shadow is | 'none' |
+  ex: `<Form shadow='left-bottom' />`
+| shadowColor | no | string | color of the shadow | colors.grey60 |
+  ex: `<Form shadowColor={colors.dark}/>`
+| borderRadius | no | number | border radius for the layout | 15 |
+  ex: `<Form borderRadius={20} />`
