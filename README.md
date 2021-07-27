@@ -6,14 +6,14 @@ This react native library offers some components to make mobile coding faster wi
 
 Here is a list of the widgets:
 - Avatar (utilisateur) :
-- Clickable (bouton) :
+- Clickable (bouton) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/buttons.jpg "Clickable")
 - colors (a full package of colors) :
 - DropDown (a button which displays a list on click) :
 - Form (login form) :
-- Input (a text input) :
+- Input (a text input) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/input.jpg "Input")
 - Layout (an default app layout) :
 - Spacer (a horizontal or vertical spacer) :
-- Title (a very big text) :
+- Title (a very big text) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/title.jpg "Title")
 
 # Installation
 For the time being, it works only on npm (no yarn, but it'll come soon !). To install it, just type in your project folder :
