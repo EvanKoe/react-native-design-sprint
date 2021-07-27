@@ -131,9 +131,26 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | style | no | StyleProp<ViewStyle> | style applied on main layout | { } | `<Layout style={{ backgroundColor: '#0008' }} />` |
 | scrollable | no | boolean | makes the layout scrollable | false | `<Layout scrollable />` |
 | backgroundColor | no | string | set a custom background color | depending on dark option | `<Layout backgroundColor={colors.fadeRedDark} />` |
-
-  Layout takes a children propertie. He just render them : ```js
-  <Layout options>
-    // here are the children  
-  </Layout>
-  ```
+  
+## Spacer
+| Option | Mandatory? | Type | Description | Default | Example |
+| --- | --- | --- | ------ | ------ | --- |
+| vertical | if not horizontal | boolean | makes spacer vertical | false | `<Sapcer vertical />` |
+| horizontal | if not vertical | boolean | makes spacer horizontal | false | `<Spacer horizontal />` |
+| size | yes | number | size of the spacer (px) | 20 | `<Sapcer size={15} />` |
+  
+## Title
+| Option | Mandatory? | Type | Description | Default | Example |
+| --- | --- | --- | ------ | ------ | --- |
+| style | no | StyleProp<TextStyle> | style applied on the text | { } | `<Title style={{ color: colors.white }} />` |
+| oofsize | no | boolean | biggest size | false | `<Title oofsize />` |
+| big | no | boolean | big size | false | `<Title big />` |
+| medium | no | boolean | medium size | false | `<Title medium />` |
+| small | no | boolean | small size | false | `<Title small />` |
+| extraSmall | no | boolean | extra small size | false | `<Title extraSmall />` |
+| bold | no | boolean | bold text | false | `<Title bold />` |
+| font | no | string | adds custom font | undefined | `<Title font='Comic Sans' />` |
+| size | no | number | set the text size (px) | 20 | `<Title size={24} />` |
+| color | no | string | set the text color | colors.black | `<Title color={colors.grey200} />` |
+| right | no | boolean | makes the title float right | false | `<Title right />` |
+| center | no | boolean | centers the title | false | `<Title center />` |
