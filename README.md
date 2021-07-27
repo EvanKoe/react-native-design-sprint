@@ -49,5 +49,6 @@ export default App;
 | primary | no | boolean | loads a primary prebuilt style (with primaryColor) | `<Clickable primary />` | false |
 | secondary | no | boolean | same as primary | `<Clickable secondary />` | false |
 | disabled | no | boolean | disables the button | `<Clickable disabled />` | false |
-| primaryColor | if primary or secondary | string | set a colorbase for prebuilt style | colors.red700 |
+| primaryColor | if primary or secondary | string | set a colorbase for prebuilt style | `<Clickable primaryColor={'#000'}` | colors.red700 |
 | callback | no | () => void | onPress function | `<Clickable callback={() => function()} />` | console.log('You clicked here !') |
+| textStyle | no | StyleProp<TextStyle> | applies a style for the button's text | `<Clickable textStyle={{ color: '#fff' }} />` | {} |
