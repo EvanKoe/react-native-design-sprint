@@ -88,7 +88,7 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
   
 ## Form
 | Option | Mandatory? | Type | Description  | Default | Example |
-| --- | --- | --- | ------ | --- |
+| --- | --- | --- | ------ | ------ | --- |
 | title | no | string | title text | '' | `<Form title='Login' />` |
 | mainStyle | no | StyleProp<ViewStyle> | style on main container (root) | { } | `<Form mainStyle={{ backgroundColor: '#fff8' }} />` |
 | titleStyle | no | StyleProp<TextStyle> | style on title | { } | `<Form titleStyle={{ color: '#000' }} />` |
@@ -106,7 +106,7 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
   
 ## Input
 | Option | Mandatory? | Type | Description  | Default | Example |
-| --- | --- | --- | ------ | --- |
+| --- | --- | --- | ------ | ------ | --- |
 | type | no | string | email ? Password ? | 'text' | `<Input type='text' />` |
 | placeholder | no | string | placeholder | 'Input text right here ' | `<Input | placeholder='Your email' />` |
 | placeholderColor | no | string | placeholder color | `<Input placeholderColor={colors.transp400}/>` |
