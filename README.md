@@ -87,33 +87,37 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 > If you want to pass style for each item of the list, do it through your renderItem function !
   
 ## Form
-| Option | Mandatory? | Type | Description  | Default |
+| Option | Mandatory? | Type | Description  | Default | Example 
 | --- | --- | --- | ------ | --- |
-| title | no | string | title text | '' |
-  ex: `<Form title='Login' />`
-| mainStyle | no | StyleProp<ViewStyle> | style on main container (root) | { } |
-  ex: `<Form mainStyle={{ backgroundColor: '#fff8' }} />`
-| titleStyle | no | StyleProp<TextStyle> | style on title | { } |
-  ex: `<Form titleStyle={{ color: '#000' }} />`
-| buttonColor | no | string | color of the button | colors.black |
-  ex: `<Form buttonColor={colors.red400} />`
-| buttonType | no | string | primary/secondary/disabled (linked to clickable) | 'primary' |
-  ex: `<Form buttonType='secondary' />`
-| buttonStyle | no | StyleProp<ViewStyle> | style on button | { } |
-  ex: `<Form buttonStyle={{ backgroundColor: '#fff8' }} />`
-| buttonSticky | no | string | left/center.. make the button float to a side | 'none' |
-  ex: `<Form buttonSticky='right' />`
-| buttonShadow | no | string | none/right-top... displays a cheated shadow using borders | 'none' |
-  ex: `<Form buttonShadow='bottom-right-top' />`
-| buttonShadowColor | no | string | color of the shadow | colors.grey60 |
-  ex: `<Form buttonShadowColor={colors.dark} />`
-| style | no | StyleProp<ViewStyle> | main style | { } |
-  ex: `<Form style={{ backgroundColor: '#fff8' }} />`
-| callback | no | (object: any) => void | function called on submit | console.log('Form callback missing. Please add one.') |
-  ex: `<Form callback={() => console.log('You\'re logged in !')}/>`
-| shadow | no | string | left-bottom.. say where the shadow is | 'none' |
-  ex: `<Form shadow='left-bottom' />`
-| shadowColor | no | string | color of the shadow | colors.grey60 |
-  ex: `<Form shadowColor={colors.dark}/>`
-| borderRadius | no | number | border radius for the layout | 15 |
-  ex: `<Form borderRadius={20} />`
+| title | no | string | title text | '' | `<Form title='Login' />`
+| mainStyle | no | StyleProp<ViewStyle> | style on main container (root) | { } | `<Form mainStyle={{ backgroundColor: '#fff8' }} />`
+| titleStyle | no | StyleProp<TextStyle> | style on title | { } | `<Form titleStyle={{ color: '#000' }} />`
+| buttonColor | no | string | color of the button | colors.black | `<Form buttonColor={colors.red400} />`
+| buttonType | no | string | primary/secondary/disabled (linked to clickable) | 'primary' | `<Form buttonType='secondary' />`
+| buttonStyle | no | StyleProp<ViewStyle> | style on button | { } | `<Form buttonStyle={{ backgroundColor: '#fff8' }} />`
+| buttonSticky | no | string | left/center.. make the button float to a side | 'none' | `<Form buttonSticky='right' />`
+| buttonShadow | no | string | none/right-top... displays a cheated shadow using borders | 'none' | `<Form buttonShadow='bottom-right-top' />`
+| buttonShadowColor | no | string | color of the shadow | colors.grey60 | `<Form buttonShadowColor={colors.dark} />`
+| style | no | StyleProp<ViewStyle> | main style | { } | `<Form style={{ backgroundColor: '#fff8' }} />`
+| callback | no | (object: any) => void | function called on submit | console.log('Form callback missing. Please add one.') | `<Form callback={() => console.log('You\'re logged in !')}/>`
+| shadow | no | string | left-bottom.. say where the shadow is | 'none' | `<Form shadow='left-bottom' />`
+| shadowColor | no | string | color of the shadow | colors.grey60 | `<Form shadowColor={colors.dark}/>`
+| borderRadius | no | number | border radius for the layout | 15 | `<Form borderRadius={20} />`
+  
+## Input
+| Option | Mandatory? | Type | Description  | Default | Example 
+| --- | --- | --- | ------ | --- |
+type | no | string | email ? Password ? | 'text' | `<Input type='text' />`
+placeholder | no | string | placeholder | 'Input text right here ' | `<Input placeholder='Your email' />`
+placeholderColor | no | string | placeholder color | `<Input placeholderColor={colors.transp400}/>`
+style | no | StyleProp<ViewStyle> | style applied on main layout | { } | `<Input style={{ backgroundcolor: colors.red500 }} />`
+textStyle | no | StyleProp<TextStyle> | style applied to the text | { } | same as style
+onFinished | no | (e: string) => void | function called when submitted | console.log('You typed something !') | `<Input onFinished={(e) => console.log(e)} />`
+onCharTyped | no | (e: string) => void | function called when a text is changed | { } | `<Input onCharTyped={(e) => console.log(e)} />`
+required | no | boolean | tells wether this field is required or not | false | `<Input required />`
+value | no | string | text that is typed in the entry by default | '' | `<Input value='Hi !'/>`
+placeholderColor | no | string | placeholder's color | colors.grey200 | `<Input placeholderColor={colors.wtransp500} />`
+noRegex | no | boolean | for email only: disables regex | false | `<Input noRegex />`
+disabled | no | boolean | disables the entry | false | `<Input disabled />`
+  
+## Layout
