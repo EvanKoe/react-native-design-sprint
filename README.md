@@ -109,7 +109,7 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | --- | --- | --- | ------ | ------ | --- |
 | type | no | string | email ? Password ? | 'text' | `<Input type='text' />` |
 | placeholder | no | string | placeholder | 'Input text right here ' | `<Input | placeholder='Your email' />` |
-| placeholderColor | no | string | placeholder color | `<Input placeholderColor={colors.transp400}/>` |
+| placeholderColor | no | string | placeholder color | colors.grey200 | `<Input placeholderColor={colors.transp400}/>` |
 | style | no | StyleProp<ViewStyle> | style applied on main layout | { } | `<Input style={{ backgroundcolor: colors.red500 }} />` |
 | textStyle | no | StyleProp<TextStyle> | style applied to the text | { } | same as style|
 | onFinished | no | (e: string) => void | function called when submitted | console.log('You typed something !') | `<Input onFinished={(e) => console.log(e)} />` |
@@ -121,3 +121,19 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | disabled | no | boolean | disables the entry | false | `<Input disabled />` |
   
 ## Layout
+| Option | Mandatory? | Type | Description  | Default | Example |
+| --- | --- | --- | ------ | ------ | --- |
+| dark | no | boolean | enables dark background | false | `<Layout dark />` |
+| title | no | string | displays a title | '' | `<Layout title='Welcome !' />` |
+| titleStyle | no | StyleProp<TextStyle> | style applied on title | { } | `<Layout titleStyle={{ color: colors.grey700 }} />` |
+| titleColor | no | string | title color | colors.black | `<Layout titleColor={colors.grey700} />` |
+| titleSize | no | number | size (px) for font title | 50 | `<Layout titleSize={42}/>` |
+| style | no | StyleProp<ViewStyle> | style applied on main layout | { } | `<Layout style={{ backgroundColor: '#0008' }} />` |
+| scrollable | no | boolean | makes the layout scrollable | false | `<Layout scrollable />` |
+| backgroundColor | no | string | set a custom background color | depending on dark option | `<Layout backgroundColor={colors.fadeRedDark} />` |
+
+Layout takes a children propertie. He just render them : ```js
+<Layout options>
+  // here are the children  
+</Layout>
+```
