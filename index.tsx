@@ -8,7 +8,7 @@ import { Avatar } from './components/Avatar';
 import { DropDown } from './components/DropDown';
 import { Title } from './components/Title';
 
-export default {
+export {
   Clickable,
   Input,
   LoginForm,
