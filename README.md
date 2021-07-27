@@ -132,8 +132,8 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | scrollable | no | boolean | makes the layout scrollable | false | `<Layout scrollable />` |
 | backgroundColor | no | string | set a custom background color | depending on dark option | `<Layout backgroundColor={colors.fadeRedDark} />` |
 
-Layout takes a children propertie. He just render them : ```js
-<Layout options>
-  // here are the children  
-</Layout>
-```
+  Layout takes a children propertie. He just render them : ```js
+  <Layout options>
+    // here are the children  
+  </Layout>
+  ```
