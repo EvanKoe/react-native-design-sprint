@@ -5,14 +5,14 @@ DesignSprint is a little component library I made while I was learning React Nat
 This react native library offers some components to make mobile coding faster with prebuilt and fully-personnalizable widgets.
 
 Here is a list of the widgets:
-- Avatar (utilisateur) :
+- Avatar (utilisateur) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/Avatar.jpg "Avatar")
 - Clickable (bouton) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/buttons.jpg "Clickable")
-- colors (a full package of colors) :
-- DropDown (a button which displays a list on click) :
-- Form (login form) :
+- colors (a full package of colors),
+- DropDown (a button which displays a list on click) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/DropDown.jpg "DropDown")
+- LoginForm (login form) : ![alt  text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/LoginForm.jpg "Login Form")
 - Input (a text input) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/input.jpg "Input")
-- Layout (an default app layout) :
-- Spacer (a horizontal or vertical spacer) :
+- Layout (an default app layout),
+- Spacer (a horizontal or vertical spacer),
 - Title (a very big text) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/title.jpg "Title")
 
 # Installation
@@ -49,6 +49,8 @@ export default App;
 | text | no | string | displays the first letter into the Avatar | `<Avatar text="Evan" />` | 'user' |
 | connected | no | string | changes the color | `<Avatar connected="connected" />` | 'none' |
 | size | no | number | Size of the Avatar (in px) | `<Avatar size={140} />` | 100 |
+| style | no | StyleProp<ViewStyle> | style applied to main layout | `<Avatar style={{ borderRadius: 15 }} />` | { } |
+| backgroundColor | no | string | background color | `<Avatar backgroundColor={colors.red} />` | 'none' |
 
 ## Clickable
 | Option | Mandatory? | Type | Description | Example | Default |
@@ -83,6 +85,7 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | listStyle | no | same as style | style to be applied generally on the list (not on each item !) | same as style | { } |
 | buttonStyle | no | same as style | style applied on the clickable | same as style | { } |
 | titleStyle | no | same as style | style applied on the title (clickable's text) | same as style | { } |
+| buttonType | no | string | primary/secondary/disabled ... see Clickable options | `<DropDown buttonType='primary' />` | 'none' |
   
 > If you want to pass style for each item of the list, do it through your renderItem function !
   
@@ -154,3 +157,6 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | color | no | string | set the text color | colors.black | `<Title color={colors.grey200} />` |
 | right | no | boolean | makes the title float right | false | `<Title right />` |
 | center | no | boolean | centers the title | false | `<Title center />` |
+  
+# Contribute
+Feel free to contribute if you know how to make this lib better ! 
