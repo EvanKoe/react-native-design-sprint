@@ -21,7 +21,7 @@ interface Props {
   textStyle?: StyleProp<TextStyle>;   // style to be applied on the button text
   iconStyle?: StyleProp<TextStyle>;   // style to be applied on the button icon
   style?: StyleProp<ViewStyle>;       // style to be applied on the main layout
-  icon?: any;                         // icon name (AntDesign)
+  icon?: string;                         // icon name (AntDesign)
   iconSize?: number;                  // icon size (px)
   iconColor?: string;                 // icon color
   text?: string;                      // text to be displayed in the button

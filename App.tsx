@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useRef } from 'react';
 import { StyleSheet, Text, SafeAreaView, FlatList, ScrollView, View, ToastAndroid } from 'react-native';
 import { Clickable } from './src/Clickable';

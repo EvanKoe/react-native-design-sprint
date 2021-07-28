@@ -11,13 +11,14 @@ interface Props {
   list: any;                              // list of object that will be displayed as dropdown
   title?: string;                         // title that will be displayed on the button
   renderItem: (e: any) => void;           // function to render each item of the dropdown
-  onOpen: () => void;                     // function to call when dropdown opened
-  onClose: () => void;                    // function to call when dropdown closed
+  onOpen?: () => void;                     // function to call when dropdown opened
+  onClose?: () => void;                    // function to call when dropdown closed
   style?: StyleProp<ViewStyle>;           // style to be applied on the main layout
   listStyle?: StyleProp<ViewStyle>;       // style to be applied on the list
   buttonStyle?: StyleProp<ViewStyle>;     // style to be applied on the dropdown's button
   buttonStyleOnOpen?: StyleProp<ViewStyle>// style to be applied on the button when dropdown's opened
   titleStyle?: StyleProp<ViewStyle>;      // style to be applied on the dropdown's button text
+  buttonType?: string;                    // primary/secondary ... button options
 }
 
 export const DropDown: FC<Props> = ({
@@ -30,14 +31,17 @@ export const DropDown: FC<Props> = ({
   listStyle = {},
   buttonStyle = {},
   buttonStyleOnOpen = {},
-  titleStyle = {}
+  titleStyle = {},
+  buttonType = 'none'
 }) => {
   const [listState, setListState] = useState(false);
 
   return (
     <View style={style}>
       <Clickable
-        secondary
+        primary={(buttonType === 'primary')}
+        secondary={(buttonType === 'secondary')}
+        disabled={(buttonType === 'disabled')}
         callback={() => {
           setListState(listState => !listState)
           if (listState && onOpen)
@@ -47,6 +51,12 @@ export const DropDown: FC<Props> = ({
         }}
         style={[
           { marginBottom: 0 },
+          listState ? {
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0
+          } : {
+            borderRadius: 15
+          },
           listState ? buttonStyleOnOpen : buttonStyle
         ]}
         textStyle={titleStyle}
