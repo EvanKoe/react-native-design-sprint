@@ -2,7 +2,7 @@ DesignSprint is a little component library I made while I was learning React Nat
 > This library has not been tested on IOS ! I cannot guarantee the result on IOS for the time being !
 
 # DesignSprint
-This react native library offers some components to make mobile coding faster with prebuilt and fully-personnalizable widgets. I'll give you some screenshots to see what are the default components of this lib, but remember that you can **always** (on every component of this lib) add your own style to customize 'em !
+This react native library offers some components to make mobile coding faster with prebuilt and fully-personnalizable widgets. I'll give you some screenshots to see what are the default components of this lib, but remember that you can **always** (on every component of this lib) add your own style to customize 'em ! This lib has been coded with only the standard react-native components, no external library has been used !
 
 Here is a list of the widgets:
 - Avatar (utilisateur) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/Avatar.jpg "Avatar")
