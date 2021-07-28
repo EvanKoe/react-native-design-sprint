@@ -2,7 +2,7 @@ DesignSprint is a little component library I made while I was learning React Nat
 > This library has not been tested on IOS ! I cannot guarantee the result on IOS for the time being !
 
 # DesignSprint
-This react native library offers some components to make mobile coding faster with prebuilt and fully-personnalizable widgets.
+This react native library offers some components to make mobile coding faster with prebuilt and fully-personnalizable widgets. I'll give you some screenshots to see what are the default components of this lib, but remember that you can **always** (on every component of this lib) add your own style to customize 'em !
 
 Here is a list of the widgets:
 - Avatar (utilisateur) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/Avatar.jpg "Avatar")
@@ -17,11 +17,17 @@ Here is a list of the widgets:
 
 # Installation
 To install DesignSprint, just type in your project folder :
+For npm : 
 ```
 npm i react-native-design-sprint
 ```
+For yarn :
+```
+yarn add react-native-design-sprint
+```
+
 And then, import the components you want to use in your project, as you could have done for react native components :
-```js
+```javascript
 import { Component1, Component2 } from 'react-native-design-sprint';
 ```
 You're done !
@@ -40,6 +46,8 @@ const App = () => {
 
 export default App;
 ```
+
+Next, you'll see a list of every component's options, to understand how they work, and how you can customize them. 
 
 # Components' options
 ## Avatar
