@@ -16,13 +16,13 @@ Here is a list of the widgets:
 - Title (a very big text) : ![alt text](https://github.com/EvanKoe/react-native-design-sprint/blob/main/images/title.jpg "Title")
 
 # Installation
-For the time being, it works only on npm (no yarn, but it'll come soon !). To install it, just type in your project folder :
+To install DesignSprint, just type in your project folder :
 ```
 npm i react-native-design-sprint
 ```
 And then, import the components you want to use in your project, as you could have done for react native components :
 ```js
-import { Avatar, Title } from 'react-native-design-sprint';
+import { Component1, Component2 } from 'react-native-design-sprint';
 ```
 You're done !
 
