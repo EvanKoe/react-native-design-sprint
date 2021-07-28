@@ -89,24 +89,28 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
   
 > If you want to pass style for each item of the list, do it through your renderItem function !
   
-## Form
+## LoginForm
 | Option | Mandatory? | Type | Description  | Default | Example |
 | --- | --- | --- | ------ | ------ | --- |
-| title | no | string | title text | '' | `<Form title='Login' />` |
-| mainStyle | no | StyleProp<ViewStyle> | style on main container (root) | { } | `<Form mainStyle={{ backgroundColor: '#fff8' }} />` |
-| titleStyle | no | StyleProp<TextStyle> | style on title | { } | `<Form titleStyle={{ color: '#000' }} />` |
-| buttonColor | no | string | color of the button | colors.black | `<Form buttonColor={colors.red400} />` |
-| buttonType | no | string | primary/secondary/disabled (linked to clickable) | 'primary' | `<Form buttonType='secondary' />` |
-| buttonStyle | no | StyleProp<ViewStyle> | style on button | { } | `<Form buttonStyle={{ backgroundColor: '#fff8' }} />` |
-| buttonSticky | no | string | left/center.. make the button float to a side | 'none' | `<Form buttonSticky='right' />` |
-| buttonShadow | no | string | none/right-top... displays a cheated shadow using borders | 'none' | `<Form buttonShadow='bottom-right-top' />` |
-| buttonShadowColor | no | string | color of the shadow | colors.grey60 | `<Form buttonShadowColor={colors.dark} />` |
-| style | no | StyleProp<ViewStyle> | main style | { } | `<Form style={{ backgroundColor: '#fff8' }} />` |
-| callback | no | (object: any) => void | function called on submit | console.log('Form callback missing. Please add one.') | `<Form callback={() => console.log('You\'re logged in !')}/>` |
-| shadow | no | string | left-bottom.. say where the shadow is | 'none' | `<Form shadow='left-bottom' />` |
-| shadowColor | no | string | color of the shadow | colors.grey60 | `<Form shadowColor={colors.dark}/>` |
-| borderRadius | no | number | border radius for the layout | 15 | `<Form borderRadius={20} />` |
-  
+| title | no | string | title text | '' | `<LoginForm title='Login' />` |
+| mainStyle | no | StyleProp<ViewStyle> | style on main container (root) | { } | `<LoginForm mainStyle={{ backgroundColor: '#fff8' }} />` |
+| titleStyle | no | StyleProp<TextStyle> | style on title | { } | `<LoginForm titleStyle={{ color: '#000' }} />` |
+| buttonColor | no | string | color of the button | colors.black | `<LoginForm buttonColor={colors.red400} />` |
+| buttonType | no | string | primary/secondary/disabled (linked to clickable) | 'primary' | `<LoginForm buttonType='secondary' />` |
+| buttonStyle | no | StyleProp<ViewStyle> | style on button | { } | `<LoginForm buttonStyle={{ backgroundColor: '#fff8' }} />` |
+| buttonSticky | no | string | left/center.. make the button float to a side | 'none' | `<LoginForm buttonSticky='right' />` |
+| buttonShadow | no | string | none/right-top... displays a cheated shadow using borders | 'none' | `<LoginForm buttonShadow='bottom-right-top' />` |
+| buttonShadowColor | no | string | color of the shadow | colors.grey60 | `<LoginForm buttonShadowColor={colors.dark} />` |
+| style | no | StyleProp<ViewStyle> | main style | { } | `<LoginForm style={{ backgroundColor: '#fff8' }} />` |
+| callback | no | (object: any) => void | function called on submit | console.log('Form callback missing. Please add one.') | `<LoginForm callback={() => console.log('You\'re logged in !')}/>` |
+| shadow | no | string | left-bottom.. say where the shadow is | 'none' | `<LoginForm shadow='left-bottom' />` |
+| shadowColor | no | string | color of the shadow | colors.grey60 | `<LoginForm shadowColor={colors.dark}/>` |
+| borderRadius | no | number | border radius for the layout | 15 | `<LoginForm borderRadius={20} />` |
+| placeholderTop | no | string | text displayed in top placeholder | 'Email' | `<LoginForm placeholderTop='type your email here' />` |
+| placeholderTopStyle | no | StyleProp<TextStyle> | top placeholder style | { } | `<LoginForm placeholderTopStyle={{ color: colors.white }} />` |
+| placeholderBottom | no | string | bottom placeholder style | 'Password' | same as placeholderTop |
+| placeholderBottomStyle | no | same as placeholderTopStyle | { } | same as placeholderTopStyle |
+ 
 ## Input
 | Option | Mandatory? | Type | Description  | Default | Example |
 | --- | --- | --- | ------ | ------ | --- |
