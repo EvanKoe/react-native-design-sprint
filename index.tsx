@@ -7,6 +7,7 @@ import { Spacer } from './src/Spacer';
 import { Avatar } from './src/Avatar';
 import { DropDown } from './src/DropDown';
 import { Title } from './src/Title';
+import { log, toast } from './src/functions';
 
 export {
   Clickable,
@@ -17,5 +18,7 @@ export {
   Spacer,
   Avatar,
   DropDown,
-  Title
+  Title,
+  log,
+  toast
 };

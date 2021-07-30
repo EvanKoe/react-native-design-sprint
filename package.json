@@ -1,8 +1,8 @@
 {
   "name": "react-native-design-sprint",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A fully-customizable component library for react native",
-  "main": "index.tsx",
+  "main": "App.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "android": "expo start --android",
@@ -29,10 +29,12 @@
   "homepage": "https://github.com/EvanKoe/react-native-design-sprint#readme",
   "dependencies": {
     "expo": "^42.0.0",
+    "expo-cli": "^4.9.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
-    "react-native-design-sprint": "^1.0.3"
+    "react-native-design-sprint": "^1.0.3",
+    "react-native-web": "^0.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
