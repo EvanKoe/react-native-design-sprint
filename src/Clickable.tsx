@@ -6,27 +6,29 @@ import {
   StyleSheet,
   ViewStyle,
   StyleProp,
-  TextStyle
+  TextStyle,
+  GestureResponderEvent
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import colors from './colors';
+import { log } from './functions';
 
 interface Props {
-  primary?: boolean;                  // buttonStyle : primary
-  secondary?: boolean;                // buttonStyle : secondary
-  disabled?: boolean;                 // make the button not clickable
+  primary?: boolean;                            // buttonStyle : primary
+  secondary?: boolean;                          // buttonStyle : secondary
+  disabled?: boolean;                           // make the button not clickable
 
-  primaryColor?: string;              // precise a color which the button will be built on
-  callback?: () => void;              // function to call when clicked
-  textStyle?: StyleProp<TextStyle>;   // style to be applied on the button text
-  iconStyle?: StyleProp<TextStyle>;   // style to be applied on the button icon
-  style?: StyleProp<ViewStyle>;       // style to be applied on the main layout
-  icon?: string;                         // icon name (AntDesign)
-  iconSize?: number;                  // icon size (px)
-  iconColor?: string;                 // icon color
-  text?: string;                      // text to be displayed in the button
-  shadow?: string;                    // none/left-right... Displays a little cheated shadow (with border)
-  shadowColor?: string;               // color of the shadow (if shadow)
+  primaryColor?: string;                        // precise a color which the button will be built on
+  onPress?: (e: GestureResponderEvent) => void; // function to call when clicked
+  textStyle?: StyleProp<TextStyle>;             // style to be applied on the button text
+  iconStyle?: StyleProp<TextStyle>;             // style to be applied on the button icon
+  style?: StyleProp<ViewStyle>;                 // style to be applied on the main layout
+  icon?: string;                                // icon name (AntDesign)
+  iconSize?: number;                            // icon size (px)
+  iconColor?: string;                           // icon color
+  text?: string;                                // text to be displayed in the button
+  shadow?: string;                              // none/left-right... Displays a little cheated shadow (with border)
+  shadowColor?: string;                         // color of the shadow (if shadow)
 }
 
 export const Clickable: FC<Props> = ({
@@ -34,7 +36,7 @@ export const Clickable: FC<Props> = ({
   secondary = false,
   disabled = false,
   primaryColor = colors.red700,
-  callback = () => console.log('You clicked here !'),
+  onPress = (e: GestureResponderEvent) => log('You clicked here !'),
   textStyle = {},
   iconStyle = {},
   style = {},
@@ -79,7 +81,7 @@ export const Clickable: FC<Props> = ({
   return (
     <>
       <TouchableOpacity
-        onPress={() => callback()}
+        onPress={(e) => onPress(e)}
         disabled={disabled}
         style={[
           styles.container,

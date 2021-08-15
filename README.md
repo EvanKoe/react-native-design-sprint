@@ -71,7 +71,7 @@ Next, you'll see a list of every component's options, to understand how they wor
 | secondary | no | boolean | same as primary | `<Clickable secondary />` | false |
 | disabled | no | boolean | disables the button | `<Clickable disabled />` | false |
 | primaryColor | if primary or secondary | string | set a colorbase for prebuilt style | `<Clickable primaryColor='#000'` | colors.red700 |
-| callback | no | ( ) => void | onPress function | `<Clickable callback={() => function()} />` | console.log('You clicked here !') |
+| onPress | no | (e: GestureResponderEvent) => void | onPress function | `<Clickable onPress={() => function()} />` | console.log('You clicked here !') |
 | textStyle | no | StyleProp<TextStyle> | applies a style for the button's text | `<Clickable textStyle={{ color: '#fff' }} />` | { } |
 | iconStyle | no | StyleProp<TextStyle> | applies a style for the button's icon | same as textStyle | { } |
 | style | no | StyleProp<ViewStyle> | applies a style for the button | same as textStyle | { } |
