@@ -23,7 +23,7 @@ interface Props {
   textStyle?: StyleProp<TextStyle>;             // style to be applied on the button text
   iconStyle?: StyleProp<TextStyle>;             // style to be applied on the button icon
   style?: StyleProp<ViewStyle>;                 // style to be applied on the main layout
-  icon?: string;                                // icon name (AntDesign)
+  icon?: string | boolean;                      // icon name (AntDesign)
   iconSize?: number;                            // icon size (px)
   iconColor?: string;                           // icon color
   text?: string;                                // text to be displayed in the button
@@ -40,7 +40,7 @@ export const Clickable: FC<Props> = ({
   textStyle = {},
   iconStyle = {},
   style = {},
-  icon = 'codesquareo',
+  icon = false,
   iconSize = 24,
   iconColor = colors.black,
   text = 'Click here',
@@ -93,21 +93,22 @@ export const Clickable: FC<Props> = ({
         ]}
       >
         <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-          <AntDesign
-            name={icon}
-            size={iconSize}
-            color={
-              primary ? colors.white :
-              secondary ? primaryColor :
-              disabled ? colors.grey100 :
-              iconColor ? iconColor :
-              colors.black
-            }
-            style={[
-              styles.textStyle,
-              iconStyle
-            ]}
-          />
+          {icon !== false && (<AntDesign
+              name={icon}
+              size={iconSize}
+              color={
+                primary ? colors.white :
+                secondary ? primaryColor :
+                disabled ? colors.grey100 :
+                iconColor ? iconColor :
+                colors.black
+              }
+              style={[
+                styles.textStyle,
+                iconStyle
+              ]}
+            />
+          )}
           <Text
             style={[
               styles.textStyle,

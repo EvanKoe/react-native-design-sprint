@@ -1,37 +1,22 @@
 {
   "name": "react-native-design-sprint",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A fully-customizable component library for react native",
   "main": "index.tsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "expo start",
     "android": "expo start --android",
-    "start": "expo start"
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/EvanKoe/react-native-design-sprint"
-  },
-  "keywords": [
-    "design",
-    "sprint",
-    "components",
-    "library",
-    "evan",
-    "evankoe",
-    "koehler"
-  ],
-  "author": "Evan Koehler",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/EvanKoe/react-native-design-sprint/issues"
-  },
-  "homepage": "https://github.com/EvanKoe/react-native-design-sprint#readme",
   "dependencies": {
-    "expo-status-bar": "^1.0.4",
+    "expo": "~42.0.1",
+    "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -39,5 +24,5 @@
     "@types/react-native": "~0.63.2",
     "typescript": "~4.0.0"
   },
-  "private": false
+  "private": true
 }
