@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import colors from './colors';
+import { log } from './functions';
 
 interface Props {
   type?: string;                          // type : email, password, text...
@@ -29,7 +30,7 @@ export const Input: FC<Props> = ({
   placeholder = 'Input text right there',
   style = {},
   textStyle = {},
-  onFinished = () => console.log('You typed something !'),
+  onFinished = (e: string) => log(e),
   onCharTyped = (e: string) => {},
   required = false,
   value = '',
@@ -76,6 +77,7 @@ export const Input: FC<Props> = ({
           styles.textStyle,
           textStyle && textStyle
         ]}
+        value={value}
         secureTextEntry={type === 'password'}
         onChangeText={(text) => {
           setTypedText(text);

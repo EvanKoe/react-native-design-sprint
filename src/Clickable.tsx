@@ -27,7 +27,7 @@ interface Props {
   iconSize?: number;                            // icon size (px)
   iconColor?: string;                           // icon color
   text?: string;                                // text to be displayed in the button
-  shadow?: string;                              // none/left-right... Displays a little cheated shadow (with border)
+  shadow?: string;                              // none/left-right... Displays a little shadow (with border)
   shadowColor?: string;                         // color of the shadow (if shadow)
 }
 
@@ -47,8 +47,6 @@ export const Clickable: FC<Props> = ({
   shadow = 'none',
   shadowColor = colors.grey60
 }) => {
-  const [iconFColor, setIconColor] = useState('');
-
   const styles = StyleSheet.create({
     secondaryTouchable: {
       backgroundColor: colors.grey800,
@@ -56,7 +54,7 @@ export const Clickable: FC<Props> = ({
       borderWidth: 2
     },
     container: {
-      borderRadius: 20,
+      borderRadius: 5,
       paddingVertical: 10,
       paddingHorizontal: 20,
       marginVertical: 5,
@@ -66,15 +64,16 @@ export const Clickable: FC<Props> = ({
       alignContent: 'center'
     },
     textStyle: {
+      color: colors.black,
       alignSelf: 'center',
       fontWeight: 'bold'
     },
     shadow: {
       borderWidth: 2,
-      borderLeftColor: shadow.includes('left') ? shadowColor : colors.transp,
-      borderBottomColor: shadow.includes('bottom') ? shadowColor : colors.transp,
-      borderRightColor: shadow.includes('right') ? shadowColor : colors.transp,
-      borderTopColor: shadow.includes('top') ? shadowColor : colors.transp
+      borderLeftColor: (shadow.includes('left') || shadow.includes('all')) ? shadowColor : colors.transp,
+      borderBottomColor: (shadow.includes('bottom') || shadow.includes('all')) ? shadowColor : colors.transp,
+      borderRightColor: (shadow.includes('right') || shadow.includes('all')) ? shadowColor : colors.transp,
+      borderTopColor: (shadow.includes('top') || shadow.includes('all')) ? shadowColor : colors.transp
     }
   });
 
@@ -93,7 +92,8 @@ export const Clickable: FC<Props> = ({
         ]}
       >
         <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-          {icon !== false && (<AntDesign
+          {icon !== false && (
+            <AntDesign
               name={icon}
               size={iconSize}
               color={
