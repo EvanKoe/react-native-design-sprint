@@ -1,7 +1,7 @@
+# DesignSprint
 DesignSprint is a little component library I made while I was learning React Native.
 > This library has not been tested on IOS ! I cannot guarantee the result on IOS for the time being !
 
-# DesignSprint
 This react native library offers some components to make mobile coding faster with prebuilt and fully-personnalizable widgets. I'll give you some screenshots to see what are the default components of this lib, but remember that you can **always** (on every component of this lib) add your own style to customize 'em ! This lib has been coded with only the standard react-native components, no external library has been used !
 
 Here is a list of the widgets:
@@ -21,7 +21,7 @@ Since v1.0.6, this lib adds little functions to make programming easier :
 
 # Installation
 To install DesignSprint, just type in your project folder :
-For npm : 
+For npm :
 ```
 npm i react-native-design-sprint
 ```
@@ -51,7 +51,7 @@ const App = () => {
 export default App;
 ```
 
-Next, you'll see a list of every component's options, to understand how they work, and how you can customize them. 
+Next, you'll see a list of every component's options, to understand how they work, and how you can customize them.
 
 # Components' options
 ## Avatar
@@ -81,10 +81,14 @@ Next, you'll see a list of every component's options, to understand how they wor
 | text | no | string | button text | `<Clickable text='Click here !' />` | 'Click here' |
 | shadow | no | string | displays a cheated bordered shadow | `<Clickable shadow='left-top' />` | 'none' |
 | shadowColor | no | string | shadow's color | `<Clickable shadowColor='#000' />` | colors.grey60 |
+| imageUrl | no | string | url of an image | `<Clickable imageUrl='https://reactnative.dev/img/tiny_logo.png' />` | '' |
+| imageHeight | if imageUrl | number | image height | `<Clickable imageHeight={40} />` | 40 |
+| imageWidth | if imageUrl | number | image width | same as imageHeight | 40 |
+| imageStyle | if imageUrl | StyleProp<ImageStyle> | image style | `<Clickable imageStyle={{ borderRadius: 15 }} />` | { } |
 
 ## colors
-Its a file where many colors are defined. It is used this way : `colors.COLORNAME`. For example : `colors.red900`. Refer to src/colors.tsx to see the list ! 
-  
+Its a file where many colors are defined. It is used this way : `colors.COLORNAME`. For example : `colors.red900`. Refer to src/colors.tsx to see the list !
+
 ## DropDown
 | Option | Mandatory? | Type | Description | Example | Default |
 | --- | --- | --- | ------ | ------ | --- |
@@ -98,14 +102,13 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | buttonStyle | no | same as style | style applied on the clickable | same as style | { } |
 | titleStyle | no | same as style | style applied on the title (clickable's text) | same as style | { } |
 | buttonType | no | string | primary/secondary/disabled ... see Clickable options | `<DropDown buttonType='primary' />` | 'none' |
-  
+
 > If you want to pass style for each item of the list, do it through your renderItem function !
-  
+
 ## LoginForm
 | Option | Mandatory? | Type | Description  | Default | Example |
 | --- | --- | --- | ------ | ------ | --- |
 | title | no | string | title text | '' | `<LoginForm title='Login' />` |
-| mainStyle | no | StyleProp<ViewStyle> | style on main container (root) | { } | `<LoginForm mainStyle={{ backgroundColor: '#fff8' }} />` |
 | titleStyle | no | StyleProp<TextStyle> | style on title | { } | `<LoginForm titleStyle={{ color: '#000' }} />` |
 | buttonColor | no | string | color of the button | colors.black | `<LoginForm buttonColor={colors.red400} />` |
 | buttonType | no | string | primary/secondary/disabled (linked to clickable) | 'primary' | `<LoginForm buttonType='secondary' />` |
@@ -114,7 +117,7 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | buttonShadow | no | string | none/right-top... displays a cheated shadow using borders | 'none' | `<LoginForm buttonShadow='bottom-right-top' />` |
 | buttonShadowColor | no | string | color of the shadow | colors.grey60 | `<LoginForm buttonShadowColor={colors.dark} />` |
 | style | no | StyleProp<ViewStyle> | main style | { } | `<LoginForm style={{ backgroundColor: '#fff8' }} />` |
-| callback | no | (object: any) => void | function called on submit | console.log('Form callback missing. Please add one.') | `<LoginForm callback={() => console.log('You\'re logged in !')}/>` |
+| onSubmit | no | (object: any) => void | function called on submit | console.log('Form callback missing. Please add one.') | `<LoginForm onSubmit={() => console.log('You\'re logged in !')}/>` |
 | shadow | no | string | left-bottom.. say where the shadow is | 'none' | `<LoginForm shadow='left-bottom' />` |
 | shadowColor | no | string | color of the shadow | colors.grey60 | `<LoginForm shadowColor={colors.dark}/>` |
 | borderRadius | no | number | border radius for the layout | 15 | `<LoginForm borderRadius={20} />` |
@@ -122,7 +125,8 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | placeholderTopStyle | no | StyleProp<TextStyle> | top placeholder style | { } | `<LoginForm placeholderTopStyle={{ color: colors.white }} />` |
 | placeholderBottom | no | string | bottom placeholder style | 'Password' | same as placeholderTop |
 | placeholderBottomStyle | no | same as placeholderTopStyle | { } | same as placeholderTopStyle |
- 
+| children | no | any | any component to be rendered inside | (<> </>) | `<LoginForm> <Text> Hello World ! </Text> </LoginForm>` |
+
 ## Input
 | Option | Mandatory? | Type | Description  | Default | Example |
 | --- | --- | --- | ------ | ------ | --- |
@@ -138,7 +142,7 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | placeholderColor | no | string | placeholder's color | colors.grey200 | `<Input placeholderColor={colors.wtransp500} />` |
 | noRegex | no | boolean | for email only: disables regex | false | `<Input noRegex />` |
 | disabled | no | boolean | disables the entry | false | `<Input disabled />` |
-  
+
 ## Layout
 | Option | Mandatory? | Type | Description  | Default | Example |
 | --- | --- | --- | ------ | ------ | --- |
@@ -150,14 +154,14 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | style | no | StyleProp<ViewStyle> | style applied on main layout | { } | `<Layout style={{ backgroundColor: '#0008' }} />` |
 | scrollable | no | boolean | makes the layout scrollable | false | `<Layout scrollable />` |
 | backgroundColor | no | string | set a custom background color | depending on dark option | `<Layout backgroundColor={colors.fadeRedDark} />` |
-  
+
 ## Spacer
 | Option | Mandatory? | Type | Description | Default | Example |
 | --- | --- | --- | ------ | ------ | --- |
 | vertical | if not horizontal | boolean | makes spacer vertical | false | `<Sapcer vertical />` |
 | horizontal | if not vertical | boolean | makes spacer horizontal | false | `<Spacer horizontal />` |
 | size | yes | number | size of the spacer (px) | 20 | `<Sapcer size={15} />` |
-  
+
 ## Title
 | Option | Mandatory? | Type | Description | Default | Example |
 | --- | --- | --- | ------ | ------ | --- |
@@ -173,6 +177,6 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | color | no | string | set the text color | colors.black | `<Title color={colors.grey200} />` |
 | right | no | boolean | makes the title float right | false | `<Title right />` |
 | center | no | boolean | centers the title | false | `<Title center />` |
-  
+
 # Contribute
-Feel free to contribute if you know how to make this lib better ! 
+Feel free to contribute if you know how to make this lib better !

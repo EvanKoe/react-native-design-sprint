@@ -1,16 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Clickable, colors, log } from './index';
+import { Clickable, colors, log, LoginForm } from './index';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={{ color: '#fff' }}>Open up App.tsx to start working on your app!</Text>
+    <LoginForm
+      style={styles.login}
+      title="Log in"
+      titleStyle={{ color: colors.white }}
+      buttonStyle={{ backgroundColor: colors.white }}
+      buttonTextColor={colors.fadeBlueDark}
+      onSubmit={() => log('Logging in...')}
+    >
       <Clickable
-        text='Button'
-        shadow='all'
+        imageUrl='https://picsum.photos/200'
+        imageStyle={{ borderRadius: 15 }}
       />
-    </View>
+    </LoginForm>
   );
 }
 
@@ -21,4 +27,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  login: {
+    backgroundColor: colors.fadeBlueDark
+  }
 });

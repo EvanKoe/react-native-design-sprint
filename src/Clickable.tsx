@@ -1,13 +1,15 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import {
   Text,
   TouchableOpacity,
+  Image,
   View,
   StyleSheet,
   ViewStyle,
   StyleProp,
   TextStyle,
-  GestureResponderEvent
+  GestureResponderEvent,
+  ImageStyle
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import colors from './colors';
@@ -29,6 +31,10 @@ interface Props {
   text?: string;                                // text to be displayed in the button
   shadow?: string;                              // none/left-right... Displays a little shadow (with border)
   shadowColor?: string;                         // color of the shadow (if shadow)
+  imageUrl?: string;                            // image to be rendered
+  imageHeight?: number;                         // image's height
+  imageWidth?: number;                          // image's width
+  imageStyle?: StyleProp<ImageStyle>             // image's style
 }
 
 export const Clickable: FC<Props> = ({
@@ -43,9 +49,13 @@ export const Clickable: FC<Props> = ({
   icon = false,
   iconSize = 24,
   iconColor = colors.black,
-  text = 'Click here',
+  imageUrl = '',
+  text = (imageUrl === '' ? 'Click here' : ''),
   shadow = 'none',
-  shadowColor = colors.grey60
+  shadowColor = colors.grey60,
+  imageHeight = 40,
+  imageWidth = 40,
+  imageStyle = {}
 }) => {
   const styles = StyleSheet.create({
     secondaryTouchable: {
@@ -106,6 +116,18 @@ export const Clickable: FC<Props> = ({
               style={[
                 styles.textStyle,
                 iconStyle
+              ]}
+            />
+          )}
+          {imageUrl !== '' && (
+            <Image
+              source={{ uri: imageUrl }}
+              style={[
+                {
+                  width: imageWidth,
+                  height: imageHeight
+                },
+                imageStyle
               ]}
             />
           )}
