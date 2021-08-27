@@ -13,6 +13,7 @@ export default function App() {
       onSubmit={() => log('Logging in...')}
     >
       <Clickable
+        style={styles.button}
         imageUrl='https://picsum.photos/200'
         imageStyle={{ borderRadius: 15 }}
       />
@@ -21,6 +22,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: colors.blue
+  },
   container: {
     flex: 1,
     backgroundColor: colors.grey50,

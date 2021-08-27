@@ -23,6 +23,7 @@ interface Props {
   value?: string;                         // text to be put by default
   noRegex?: boolean;                      // email : does not display an error if no '@'
   disabled?: boolean;                     // disables the input
+  onFocus?: () => void;                   // function to be executed when focus gained
 }
 
 export const Input: FC<Props> = ({
@@ -36,7 +37,8 @@ export const Input: FC<Props> = ({
   value = '',
   placeholderColor = colors.grey200,
   noRegex = false,
-  disabled = false
+  disabled = false,
+  onFocus = () => {}
 }) => {
   const [typedText, setTypedText] = useState('');
   const [borderError, setBorderError] = useState('transparent');
@@ -71,6 +73,7 @@ export const Input: FC<Props> = ({
     ]}>
       <TextInput
         editable={!disabled}
+        onFocus={onFocus}
         placeholder={placeholder}
         placeholderTextColor={placeholderColor}
         style={[

@@ -142,6 +142,7 @@ Its a file where many colors are defined. It is used this way : `colors.COLORNAM
 | placeholderColor | no | string | placeholder's color | colors.grey200 | `<Input placeholderColor={colors.wtransp500} />` |
 | noRegex | no | boolean | for email only: disables regex | false | `<Input noRegex />` |
 | disabled | no | boolean | disables the entry | false | `<Input disabled />` |
+| onFocus | no | ( ) => void | function when focus gained | ( ) => { } | `<Input onFocus={() => log('I\'m focused !')}` |
 
 ## Layout
 | Option | Mandatory? | Type | Description  | Default | Example |
