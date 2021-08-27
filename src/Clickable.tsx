@@ -139,7 +139,7 @@ export const Clickable: FC<Props> = ({
               secondary && {color: primaryColor},
               textStyle
             ]}
-          > {text} </Text>
+          >{text}</Text>
         </View>
       </TouchableOpacity>
     </>
