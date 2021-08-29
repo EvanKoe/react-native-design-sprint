@@ -85,6 +85,9 @@ Next, you'll see a list of every component's options, to understand how they wor
 | imageHeight | if imageUrl | number | image height | `<Clickable imageHeight={40} />` | 40 |
 | imageWidth | if imageUrl | number | image width | same as imageHeight | 40 |
 | imageStyle | if imageUrl | StyleProp<ImageStyle> | image style | `<Clickable imageStyle={{ borderRadius: 15 }} />` | { } |
+| children | no | any | any component you want to render | `<Clickable> <Text>Button</Text> </Clickable>` | { } |
+
+> Warning ! The `icon` option takes only Antdesign icons. If you wanna render another icon lib, send it through the children option !
 
 ## colors
 Its a file where many colors are defined. It is used this way : `colors.COLORNAME`. For example : `colors.red900`. Refer to src/colors.tsx to see the list !

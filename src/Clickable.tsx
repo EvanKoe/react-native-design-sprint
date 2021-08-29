@@ -25,7 +25,7 @@ interface Props {
   textStyle?: StyleProp<TextStyle>;             // style to be applied on the button text
   iconStyle?: StyleProp<TextStyle>;             // style to be applied on the button icon
   style?: StyleProp<ViewStyle>;                 // style to be applied on the main layout
-  icon?: string | boolean;                      // icon name (AntDesign)
+  icon?: string | boolean;                      // icon name (AntDesign only)
   iconSize?: number;                            // icon size (px)
   iconColor?: string;                           // icon color
   text?: string;                                // text to be displayed in the button
@@ -34,7 +34,8 @@ interface Props {
   imageUrl?: string;                            // image to be rendered
   imageHeight?: number;                         // image's height
   imageWidth?: number;                          // image's width
-  imageStyle?: StyleProp<ImageStyle>             // image's style
+  imageStyle?: StyleProp<ImageStyle>            // image's style
+  children?: any                                // any component to be rendered (if you wanna render non-Antdesign icons)
 }
 
 export const Clickable: FC<Props> = ({
@@ -47,10 +48,11 @@ export const Clickable: FC<Props> = ({
   iconStyle = {},
   style = {},
   icon = false,
+  children = {},
   iconSize = 24,
   iconColor = colors.black,
   imageUrl = '',
-  text = (imageUrl === '' ? 'Click here' : ''),
+  text = (imageUrl === '' ? undefined : ''),
   shadow = 'none',
   shadowColor = colors.grey60,
   imageHeight = 40,
@@ -131,15 +133,18 @@ export const Clickable: FC<Props> = ({
               ]}
             />
           )}
-          <Text
-            style={[
-              styles.textStyle,
-              disabled && {color: colors.grey200},
-              primary && {color: colors.white},
-              secondary && {color: primaryColor},
-              textStyle
-            ]}
-          >{text}</Text>
+          {text !== undefined && (
+            <Text
+              style={[
+                styles.textStyle,
+                disabled && {color: colors.grey200},
+                primary && {color: colors.white},
+                secondary && {color: primaryColor},
+                textStyle
+              ]}
+            >{text}</Text>
+          )}
+          {children !== {} && children}
         </View>
       </TouchableOpacity>
     </>
