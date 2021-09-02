@@ -48,7 +48,7 @@ export const Clickable: FC<Props> = ({
   iconStyle = {},
   style = {},
   icon = false,
-  children = {},
+  children = undefined,
   iconSize = 24,
   iconColor = colors.black,
   imageUrl = '',
@@ -144,7 +144,7 @@ export const Clickable: FC<Props> = ({
               ]}
             >{text}</Text>
           )}
-          {children !== {} && children}
+          {children !== undefined && children}
         </View>
       </TouchableOpacity>
     </>
