@@ -36,6 +36,7 @@ interface Props {
   imageWidth?: number;                          // image's width
   imageStyle?: StyleProp<ImageStyle>            // image's style
   children?: any                                // any component to be rendered (if you wanna render non-Antdesign icons)
+  transparentBackground?: boolean               // removes backgroundColor
 }
 
 export const Clickable: FC<Props> = ({
@@ -57,11 +58,12 @@ export const Clickable: FC<Props> = ({
   shadowColor = colors.grey60,
   imageHeight = 40,
   imageWidth = 40,
-  imageStyle = {}
+  imageStyle = {},
+  transparentBackground = false
 }) => {
   const styles = StyleSheet.create({
     secondaryTouchable: {
-      backgroundColor: colors.grey800,
+      backgroundColor: transparentBackground ? colors.transp : colors.grey800,
       borderColor: primaryColor,
       borderWidth: 2
     },
@@ -90,63 +92,61 @@ export const Clickable: FC<Props> = ({
   });
 
   return (
-    <>
-      <TouchableOpacity
-        onPress={(e) => onPress(e)}
-        disabled={disabled}
-        style={[
-          styles.container,
-          primary && {backgroundColor: primaryColor},
-          secondary && styles.secondaryTouchable,
-          disabled && {backgroundColor: colors.grey700},
-          shadow !== 'none' && styles.shadow,
-          style && style
-        ]}
-      >
-        <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-          {icon !== false && (
-            <AntDesign
-              name={icon}
-              size={iconSize}
-              color={
-                primary ? colors.white :
-                secondary ? primaryColor :
-                disabled ? colors.grey100 :
-                iconColor ? iconColor :
-                colors.black
-              }
-              style={[
-                styles.textStyle,
-                iconStyle
-              ]}
-            />
-          )}
-          {imageUrl !== '' && (
-            <Image
-              source={{ uri: imageUrl }}
-              style={[
-                {
-                  width: imageWidth,
-                  height: imageHeight
-                },
-                imageStyle
-              ]}
-            />
-          )}
-          {text !== undefined && (
-            <Text
-              style={[
-                styles.textStyle,
-                disabled && {color: colors.grey200},
-                primary && {color: colors.white},
-                secondary && {color: primaryColor},
-                textStyle
-              ]}
-            >{text}</Text>
-          )}
-          {children !== undefined && children}
-        </View>
-      </TouchableOpacity>
-    </>
+    <TouchableOpacity
+      onPress={(e) => onPress(e)}
+      disabled={disabled}
+      style={[
+        styles.container,
+        primary && {backgroundColor: primaryColor},
+        secondary && styles.secondaryTouchable,
+        disabled && {backgroundColor: colors.grey700},
+        shadow !== 'none' && styles.shadow,
+        style && style
+      ]}
+    >
+      <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+        {icon !== false && (
+          <AntDesign
+            name={icon}
+            size={iconSize}
+            color={
+              primary ? colors.white :
+              secondary ? primaryColor :
+              disabled ? colors.grey100 :
+              iconColor ? iconColor :
+              colors.black
+            }
+            style={[
+              styles.textStyle,
+              iconStyle
+            ]}
+          />
+        )}
+        {imageUrl !== '' && (
+          <Image
+            source={{ uri: imageUrl }}
+            style={[
+              {
+                width: imageWidth,
+                height: imageHeight
+              },
+              imageStyle
+            ]}
+          />
+        )}
+        {text !== undefined && (
+          <Text
+            style={[
+              styles.textStyle,
+              disabled && {color: colors.grey200},
+              primary && {color: colors.white},
+              secondary && {color: primaryColor},
+              textStyle
+            ]}
+          >{text}</Text>
+        )}
+        {children !== undefined && children}
+      </View>
+    </TouchableOpacity>
   );
 };

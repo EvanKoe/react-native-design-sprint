@@ -86,6 +86,7 @@ Next, you'll see a list of every component's options, to understand how they wor
 | imageWidth | if imageUrl | number | image width | same as imageHeight | 40 |
 | imageStyle | if imageUrl | StyleProp<ImageStyle> | image style | `<Clickable imageStyle={{ borderRadius: 15 }} />` | { } |
 | children | no | any | any component you want to render | `<Clickable> <Text>Button</Text> </Clickable>` | { } |
+| transparentBackground | no | boolean | removes backgroundColor | `<Clickable transparentBackground />` | false |
 
 > Warning ! The `icon` option takes only Antdesign icons. If you wanna render another icon lib, send it through the children option !
 

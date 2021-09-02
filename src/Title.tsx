@@ -65,7 +65,7 @@ export const Title: FC<Props> = ({
         {flexDirection: 'row', justifyContent: 'flex-start'}
       }
     >
-      <Text style={[styles.text, style]}> { children } </Text>
+      <Text style={[styles.text, style]}>{children}</Text>
     </View>
   );
 };
