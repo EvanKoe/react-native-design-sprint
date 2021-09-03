@@ -12,7 +12,12 @@ const toast = (e: string) => {
   );
 };
 
+const capitalize = (e: string) => {
+  return e[0].toUpperCase() + e.substring(1, e.length);
+}
+
 export {
   toast,
-  log
+  log,
+  capitalize
 };

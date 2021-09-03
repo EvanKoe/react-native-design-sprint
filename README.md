@@ -18,6 +18,7 @@ Here is a list of the widgets:
 Since v1.0.6, this lib adds little functions to make programming easier :
 - `log(e: any)` which equals to `console.log(e: any)` : makes it faster to type,
 - `toast(e: string)` which equals to a short centered Android toast : it has not been tested on IOS !
+- `capitalize(e: string)` which returns a string capitalized like in this example : `capitalize('hello world') ==> 'Hello world'`
 
 # Installation
 To install DesignSprint, just type in your project folder :
