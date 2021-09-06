@@ -23,5 +23,6 @@ const ftoi = (e: number) => {
 export {
   toast,
   log,
-  capitalize
+  capitalize,
+  ftoi
 };

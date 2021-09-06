@@ -21,5 +21,6 @@ export {
   Title,
   log,
   toast,
-  capitalize
+  capitalize,
+  ftoi
 };

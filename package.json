@@ -5,7 +5,15 @@
   "main": "index.tsx",
   "license": "MIT",
   "keywords": [
-    "design", "react", "react native", "button", "Input", "Layout", "Title", "Colors", "Avatar"
+    "design",
+    "react",
+    "react native",
+    "button",
+    "Input",
+    "Layout",
+    "Title",
+    "Colors",
+    "Avatar"
   ],
   "scripts": {
     "start": "expo start",
@@ -22,7 +30,7 @@
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "~7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
     "typescript": "~4.0.0"
