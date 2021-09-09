@@ -20,6 +20,7 @@ const colors = {
   grey50: '#111',
   black: '#000',
   dark: '#212121',
+  darker: '#121212',
 
   //? salmon (pink-red)
   salmon: '#ff545d',
