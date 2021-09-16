@@ -1,12 +1,9 @@
-import React, { Component, FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import {
-  SafeAreaView,
-  View,
   StyleSheet,
   TextStyle,
   ViewStyle,
   StyleProp,
-  Text,
   ScrollView
 } from 'react-native';
 import colors from './colors';
@@ -31,7 +28,7 @@ export const Layout: FC<Props> = ({
   titleSize = 50,
   titleColor = colors.black,
   style = {},
-  children = undefined,
+  children = <></>,
   scrollable = false,
   backgroundColor = dark ? colors.dark : colors.grey800
 }) => {
@@ -52,7 +49,7 @@ export const Layout: FC<Props> = ({
       {(title !== '') && (
         <Title oofsize style={[styles.title, titleStyle]} color={titleColor}> {title} </Title>
       )}
-      {(children !== undefined) && children}
+      {children}
     </ScrollView>
   );
 };

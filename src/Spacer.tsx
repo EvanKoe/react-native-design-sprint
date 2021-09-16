@@ -1,10 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { View } from 'react-native';
 
 interface Props {
   vertical?: boolean;     // is this spacer vertical ?
   horizontal?: boolean;   // or horizontal ?
-  size: number;           // size of the spacer (in px)
+  size: number | string;  // size of the spacer (in px)
 }
 
 export const Spacer: FC<Props> = ({

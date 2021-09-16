@@ -49,7 +49,7 @@ export const Clickable: FC<Props> = ({
   iconStyle = {},
   style = {},
   icon = false,
-  children = undefined,
+  children = <></>,
   iconSize = 24,
   iconColor = colors.black,
   imageUrl = '',
@@ -63,7 +63,7 @@ export const Clickable: FC<Props> = ({
 }) => {
   const styles = StyleSheet.create({
     secondaryTouchable: {
-      backgroundColor: transparentBackground ? colors.transp : colors.grey800,
+      backgroundColor: colors.grey800,
       borderColor: primaryColor,
       borderWidth: 2
     },
@@ -73,7 +73,7 @@ export const Clickable: FC<Props> = ({
       paddingHorizontal: 20,
       marginVertical: 5,
       marginHorizontal: 5,
-      backgroundColor: colors.grey800,
+      backgroundColor: transparentBackground ? colors.transp : colors.grey800,
       justifyContent: 'center',
       alignContent: 'center'
     },
@@ -145,7 +145,7 @@ export const Clickable: FC<Props> = ({
             ]}
           >{text}</Text>
         )}
-        {children !== undefined && children}
+        {children}
       </View>
     </TouchableOpacity>
   );

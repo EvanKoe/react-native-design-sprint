@@ -1,6 +1,6 @@
 {
   "name": "react-native-design-sprint",
-  "version": "1.0.22",
+  "version": "1.0.25",
   "description": "A fully-customizable component library for react native",
   "main": "index.tsx",
   "license": "MIT",
@@ -24,16 +24,16 @@
   },
   "dependencies": {
     "expo": "~42.0.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
-    "react-native-web": "~0.13.12"
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-native": "^0.65.1",
+    "react-native-web": "~0.17.1"
   },
   "devDependencies": {
-    "@babel/core": "~7.9.0",
-    "@types/react": "~16.9.35",
-    "@types/react-native": "~0.63.2",
-    "typescript": "~4.0.0"
+    "@babel/core": "~7.15.5",
+    "@types/react": "~17.0.20",
+    "@types/react-native": "~0.65.0",
+    "typescript": "~4.4.2"
   },
   "private": false
 }

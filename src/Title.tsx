@@ -4,7 +4,6 @@ import {
   StyleSheet,
   StyleProp,
   TextStyle,
-  ViewStyle,
   View
 } from 'react-native';
 import colors from './colors';
@@ -34,7 +33,7 @@ export const Title: FC<Props> = ({
   extraSmall = false,
   bold = false,
   font = undefined,
-  children = 'This is a sample text',
+  children = '',
   size = 20,
   color = colors.black,
   right = false,
