@@ -8,6 +8,7 @@ import { Avatar } from './src/Avatar';
 import { DropDown } from './src/DropDown';
 import { Title } from './src/Title';
 import { log, toast, capitalize, ftoi } from './src/functions';
+import SlidingPanel from './src/SlidingPanel';
 
 export {
   Clickable,
@@ -19,6 +20,7 @@ export {
   Avatar,
   DropDown,
   Title,
+  SlidingPanel,
   log,
   toast,
   capitalize,

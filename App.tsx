@@ -1,37 +1,34 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Clickable, colors, log, LoginForm } from './index';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { colors, SlidingPanel } from './index';
 
 export default function App() {
   return (
-    <LoginForm
-      style={styles.login}
-      title="Log in"
-      titleStyle={{ color: colors.white }}
-      buttonStyle={{ backgroundColor: colors.white }}
-      buttonTextColor={colors.fadeBlueDark}
-      onSubmit={() => log('Logging in...')}
-    >
-      <Clickable
-        style={styles.button}
-        imageUrl='https://picsum.photos/200'
-        imageStyle={{ borderRadius: 15 }}
-      />
-    </LoginForm>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#212121' }}>
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#ddd' }}> Sample App </Text>
+      <SlidingPanel>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+        <Text>Hello </Text>
+      </SlidingPanel>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: colors.blue
-  },
-  container: {
-    flex: 1,
-    backgroundColor: colors.grey50,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  login: {
-    backgroundColor: colors.fadeBlueDark
-  }
+
 });
