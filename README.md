@@ -95,6 +95,22 @@ Next, you'll see a list of every component's options, to understand how they wor
 ## colors
 Its a file where many colors are defined. It is used this way : `colors.COLORNAME`. For example : `colors.red900`. Refer to src/colors.tsx to see the list !
 
+## SlidingPanel
+| Option | Mandatory? | Type | Description | Example | Default |
+| --- | --- | --- | ------ | ------ | --- |
+| style | no | StyleProp<ViewStyle> | your own style | { backgroundColor: '#fff' } | { } |
+| size | no | number | size when opened (0 if fullscreen) | 500 | 400 |
+| initialSize | no | number | size when closed | 10 | 20 |
+| jumpToMax | no | boolean | goes to max/min size on scroll | true | true |
+| topBarDisabled | no | boolean | if true, sliding top bar will be disabled | true | false |
+| children | no | React.ReactChild or React.ReactChild[] | components rendered in the panel | `<SlidingPanel> <Text>Hello</Text> </SlidingPanel>` | <></> |
+| isOpened | no | boolean | tells if panel is opened at render | true | true |
+| animationType | no | 'timing' or 'spring' or 'none' (string) | animation type on scroll | 'spring' | 'timing' |
+| animationDuration | no | number | if animationType == 'timing', sets animation duration | 500 | 500 |
+| disabledRadiusOnFull | no | boolean | if size == 0, when opened, disable borderRadius | true | true |
+
+> SlidingPanel has no function like _panelRef.open() or _panelRef.close() at the moement. But it is under developpement !
+
 ## DropDown
 | Option | Mandatory? | Type | Description | Example | Default |
 | --- | --- | --- | ------ | ------ | --- |

@@ -1,6 +1,6 @@
 {
   "name": "react-native-design-sprint",
-  "version": "1.0.25",
+  "version": "1.0.30",
   "description": "A fully-customizable component library for react native",
   "main": "index.tsx",
   "license": "MIT",
@@ -13,7 +13,10 @@
     "Layout",
     "Title",
     "Colors",
-    "Avatar"
+    "Avatar",
+    "sliding panel",
+    "sliding up panel",
+    "bottom sheet"
   ],
   "scripts": {
     "start": "expo start",
@@ -24,9 +27,13 @@
   },
   "dependencies": {
     "expo": "~42.0.1",
+    "expo-cli": "4.12.10",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-native": "^0.65.1",
+    "react-native": "0.63.4",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-reanimated": "~2.2.0",
+    "react-native-safe-area-context": "3.2.0",
     "react-native-web": "~0.17.1"
   },
   "devDependencies": {
