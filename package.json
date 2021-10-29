@@ -2,7 +2,7 @@
   "name": "react-native-design-sprint",
   "version": "1.0.30",
   "description": "A fully-customizable component library for react native",
-  "main": "index.tsx",
+  "main": "./node_modules/expo/AppEntry.js",
   "license": "MIT",
   "keywords": [
     "design",

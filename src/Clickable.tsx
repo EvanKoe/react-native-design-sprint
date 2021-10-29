@@ -65,7 +65,7 @@ export const Clickable: FC<Props> = ({
     secondaryTouchable: {
       backgroundColor: colors.grey800,
       borderColor: primaryColor,
-      borderWidth: 2
+      borderWidth: 1
     },
     container: {
       borderRadius: 5,
