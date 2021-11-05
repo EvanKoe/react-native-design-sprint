@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { View, StyleSheet, Dimensions, StyleProp, ViewStyle } from 'react-native';
 import { PanGestureHandler } from 'react-native-gesture-handler';
 import Animated, { withSpring, useSharedValue, useAnimatedStyle, withTiming, Easing } from 'react-native-reanimated';
-import {Clickable} from './Clickable';
+import { Clickable } from './Clickable';
 
 let WIDTH = Dimensions.get('window').width;
 let HEIGHT = Dimensions.get('window').height;
@@ -16,7 +16,7 @@ interface SlidingProps {
   topBarDisabled?: boolean;                         //  if true, sliding top bar will be disabled
   topBarStyle?: StyleProp<ViewStyle>                //  style to be applied on top bar
   children?: React.ReactChild | React.ReactChild[]; //  components rendered in the panel
-  isOpenedOnIndex?: number;                        //  tells if panel is opened
+  isOpenedOnIndex?: number;                         //  tells if panel is opened
   animationType?: 'timing' | 'spring' | 'none';     //  timing | spring => withTiming | withSpring
   // callbacks events won't work if animationType == 'none' !
   animationDuration?: number;                       //  if timing, duration of the animation
@@ -90,10 +90,12 @@ const SlidingPanel = ({
       // onClosed();
       // onStateChanged(-1);
       topPosition.value = HEIGHT - initialSize;
+      return HEIGHT - initialSize;
     } else {
       // onOpened(index);
       // onStateChanged(index);
       topPosition.value = HEIGHT - tab[index];
+      return HEIGHT - tab[index];
     }
   }
 
@@ -183,4 +185,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SlidingPanel;
+export {SlidingPanel};

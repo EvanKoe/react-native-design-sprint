@@ -7,7 +7,7 @@ import {
   ScrollView
 } from 'react-native';
 import colors from './colors';
-import { Title } from './Title';
+import Title from './Title';
 
 interface Props {
   dark?: boolean;                       // enables dark mode (dark background, light font color...)
@@ -21,7 +21,7 @@ interface Props {
   backgroundColor?: string;             // set a custom background color
 };
 
-export const Layout: FC<Props> = ({
+const Layout: FC<Props> = ({
   dark = false,
   title = '',
   titleStyle = {},
@@ -53,3 +53,5 @@ export const Layout: FC<Props> = ({
     </ScrollView>
   );
 };
+
+export {Layout};

@@ -24,7 +24,7 @@ interface Props {
   center?: boolean;               // centers the title
 }
 
-export const Title: FC<Props> = ({
+const Title: FC<Props> = ({
   style = {},
   oofsize = false,
   big = false,
@@ -68,3 +68,5 @@ export const Title: FC<Props> = ({
     </View>
   );
 };
+
+export {Title};

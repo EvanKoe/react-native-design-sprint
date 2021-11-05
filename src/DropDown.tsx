@@ -5,7 +5,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import { Clickable } from './Clickable';
+import Clickable from './Clickable';
 
 interface Props {
   list: any;                              // list of object that will be displayed as dropdown
@@ -21,7 +21,7 @@ interface Props {
   buttonType?: string;                    // primary/secondary ... button options
 }
 
-export const DropDown: FC<Props> = ({
+const DropDown: FC<Props> = ({
   list = {},
   title = 'Dropdown',
   renderItem = (e: any) => {console.log('Lol you forgot the renderItem function')},
@@ -73,3 +73,4 @@ export const DropDown: FC<Props> = ({
   );
 };
 
+export {DropDown};

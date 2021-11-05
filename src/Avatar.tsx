@@ -11,7 +11,7 @@ interface Props {
   backgroundColor?: string    // background color
 };
 
-export const Avatar: FC<Props> = ({
+const Avatar: FC<Props> = ({
   imageUrl = 'none',
   text = 'user',
   connected = 'none',
@@ -56,3 +56,5 @@ export const Avatar: FC<Props> = ({
     </View>
   );
 };
+
+export { Avatar };

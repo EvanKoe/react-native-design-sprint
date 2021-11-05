@@ -26,7 +26,7 @@ interface Props {
   onFocus?: () => void;                   // function to be executed when focus gained
 }
 
-export const Input: FC<Props> = ({
+const Input: FC<Props> = ({
   type = 'text',
   placeholder = 'Input text right there',
   style = {},
@@ -105,3 +105,5 @@ export const Input: FC<Props> = ({
     </View>
   );
 };
+
+export {Input};

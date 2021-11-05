@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
-import { Clickable } from './Clickable';
-import { Input } from './Input';
+import Clickable from './Clickable';
+import Input from './Input';
 import { View, Text, StyleSheet, ViewStyle, StyleProp, TextStyle } from 'react-native';
 import colors from './colors';
 
@@ -26,7 +26,7 @@ interface Props {
   children?: any                               // any child to be rendered inside
 }
 
-export const LoginForm: FC<Props> = ({
+const LoginForm: FC<Props> = ({
   title = '',
   titleStyle = {},
   buttonColor = colors.black,
@@ -115,3 +115,5 @@ export const LoginForm: FC<Props> = ({
     </View>
   )
 };
+
+export {LoginForm};

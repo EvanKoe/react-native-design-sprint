@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { SlidingPanel, Clickable } from './index';
-import colors from './src/colors';
+import { Clickable, SlidingPanel, colors } from './index';
 
-export default function App() {
+const App = () => {
   const [isPanelOpened, setIfPanelOpened] = React.useState(1);
 
   return (
@@ -24,7 +23,7 @@ export default function App() {
         isOpenedOnIndex={isPanelOpened}
         animationType='timing'
         snapPoints={[400, 500, 600, 0]}
-        initialSize={0}
+        initialSize={40}
         animationDuration={500}
         onOpened={(e: number) => console.log('LOUL : ', e)}
         onClosed={() => console.log('closed')}
@@ -54,3 +53,5 @@ const styles = StyleSheet.create({
     paddingBottom: 20
   }
 });
+
+export default App;

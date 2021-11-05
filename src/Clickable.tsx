@@ -39,7 +39,7 @@ interface Props {
   transparentBackground?: boolean               // removes backgroundColor
 }
 
-export const Clickable: FC<Props> = ({
+const Clickable: FC<Props> = ({
   primary = false,
   secondary = false,
   disabled = false,
@@ -150,3 +150,5 @@ export const Clickable: FC<Props> = ({
     </TouchableOpacity>
   );
 };
+
+export { Clickable };

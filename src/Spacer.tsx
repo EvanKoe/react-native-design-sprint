@@ -7,7 +7,7 @@ interface Props {
   size: number | string;  // size of the spacer (in px)
 }
 
-export const Spacer: FC<Props> = ({
+const Spacer: FC<Props> = ({
   vertical = false,
   horizontal = false,
   size = 20
@@ -21,3 +21,5 @@ export const Spacer: FC<Props> = ({
     />
   );
 };
+
+export {Spacer};
