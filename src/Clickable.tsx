@@ -16,26 +16,45 @@ import colors from './colors';
 import { log } from './functions';
 
 interface Props {
+  /** buttonStyle: primary (using primaryColor) */
   primary?: boolean;                            // buttonStyle : primary
+  /** buttonStyle: secondary */
   secondary?: boolean;                          // buttonStyle : secondary
+  /** make button not clickable */
   disabled?: boolean;                           // make the button not clickable
-
+  /** precise a color which the button will be built on */
   primaryColor?: string;                        // precise a color which the button will be built on
+  /** function to be called on button pressed */
   onPress?: (e: GestureResponderEvent) => void; // function to call when clicked
+  /** style to be applied on the button text */
   textStyle?: StyleProp<TextStyle>;             // style to be applied on the button text
+  /** style to be applied on the button icon */
   iconStyle?: StyleProp<TextStyle>;             // style to be applied on the button icon
+  /** style to be applied on the main layout */
   style?: StyleProp<ViewStyle>;                 // style to be applied on the main layout
+  /** icon name (AntDesign only. If not, pass through children) */
   icon?: string | boolean;                      // icon name (AntDesign only)
+  /** icon size (px) */
   iconSize?: number;                            // icon size (px)
+  /** icon color (string) */
   iconColor?: string;                           // icon color
+  /** text to be displayed in the button */
   text?: string;                                // text to be displayed in the button
+  /** none/left-right... display a little shadow (with border) */
   shadow?: string;                              // none/left-right... Displays a little shadow (with border)
+  /** color of the shadow (if shadow) */
   shadowColor?: string;                         // color of the shadow (if shadow)
+  /** image to be rendered */
   imageUrl?: string;                            // image to be rendered
+  /** image height */
   imageHeight?: number;                         // image's height
+  /** image width */
   imageWidth?: number;                          // image's width
+  /** image style */
   imageStyle?: StyleProp<ImageStyle>            // image's style
+  /** any component to be rendered (especially if you want to use non-AntDesign icons) */
   children?: any                                // any component to be rendered (if you wanna render non-Antdesign icons)
+  /** Remove background color : make it transparent */
   transparentBackground?: boolean               // removes backgroundColor
 }
 
