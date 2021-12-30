@@ -159,11 +159,6 @@ const SlidingPanel = ({
       >
         {!topBarDisabled && <View style={[styles.slidingBar, topBarStyle]} />}
         {children !== <></> && children}
-        <Clickable
-          primary
-          text='Print snap points'
-          onPress={() => console.log(tab)}
-        />
       </Animated.View>
     </PanGestureHandler>
   );

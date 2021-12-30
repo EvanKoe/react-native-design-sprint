@@ -1,12 +1,13 @@
 {
   "name": "react-native-design-sprint",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "A fully-customizable component library for react native",
   "main": "index.tsx",
   "license": "MIT",
   "keywords": [
     "design",
     "react",
+    "components",
     "react native",
     "button",
     "Input",
@@ -19,15 +20,9 @@
     "bottom sheet"
   ],
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "pub": "npm publish"
   },
   "dependencies": {
-    "expo": "~42.0.1",
-    "expo-cli": "4.12.10",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.63.4",

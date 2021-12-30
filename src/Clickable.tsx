@@ -1,4 +1,5 @@
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
+import React = require('react');
 import {
   Text,
   TouchableOpacity,
@@ -11,7 +12,6 @@ import {
   GestureResponderEvent,
   ImageStyle
 } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
 import colors from './colors';
 import { log } from './functions';
 
@@ -32,12 +32,6 @@ interface Props {
   iconStyle?: StyleProp<TextStyle>;             // style to be applied on the button icon
   /** style to be applied on the main layout */
   style?: StyleProp<ViewStyle>;                 // style to be applied on the main layout
-  /** icon name (AntDesign only. If not, pass through children) */
-  icon?: string | boolean;                      // icon name (AntDesign only)
-  /** icon size (px) */
-  iconSize?: number;                            // icon size (px)
-  /** icon color (string) */
-  iconColor?: string;                           // icon color
   /** text to be displayed in the button */
   text?: string;                                // text to be displayed in the button
   /** none/left-right... display a little shadow (with border) */
@@ -67,10 +61,7 @@ const Clickable: FC<Props> = ({
   textStyle = {},
   iconStyle = {},
   style = {},
-  icon = false,
   children = <></>,
-  iconSize = 24,
-  iconColor = colors.black,
   imageUrl = '',
   text = (imageUrl === '' ? undefined : ''),
   shadow = 'none',
@@ -124,23 +115,6 @@ const Clickable: FC<Props> = ({
       ]}
     >
       <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-        {icon !== false && (
-          <AntDesign
-            name={icon}
-            size={iconSize}
-            color={
-              primary ? colors.white :
-              secondary ? primaryColor :
-              disabled ? colors.grey100 :
-              iconColor ? iconColor :
-              colors.black
-            }
-            style={[
-              styles.textStyle,
-              iconStyle
-            ]}
-          />
-        )}
         {imageUrl !== '' && (
           <Image
             source={{ uri: imageUrl }}
