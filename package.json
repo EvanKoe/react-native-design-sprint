@@ -1,8 +1,8 @@
 {
   "name": "react-native-design-sprint",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "description": "A fully-customizable component library for react native",
-  "main": "index.tsx",
+  "main": "index.ts",
   "license": "MIT",
   "keywords": [
     "design",
