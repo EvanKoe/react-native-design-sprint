@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react';
+import * as React from 'react';
+import { FC, useState } from 'react';
 import {
   TextInput,
   StyleProp,
@@ -7,7 +8,6 @@ import {
   StyleSheet,
   View
 } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import colors from './colors';
 import { log } from './functions';
 
@@ -98,12 +98,8 @@ const Input: FC<Props> = ({
           onFinished(typedText)
         }}
       />
-
-      {(borderError === colors.red) && (
-        <MaterialIcons name="error-outline" size={24} color="red" />
-      )}
     </View>
   );
 };
 
-export {Input};
+export default Input;

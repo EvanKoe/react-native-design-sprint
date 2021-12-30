@@ -1,5 +1,13 @@
-import React, { FC, useState } from 'react';
-import { Text, View, Image, StyleSheet, StyleProp, ViewStyle } from 'react-native'
+import * as React from 'react';
+import { FC } from 'react';
+import {
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  StyleProp,
+  ViewStyle
+} from 'react-native'
 import colors from './colors';
 
 interface Props {
@@ -47,14 +55,14 @@ const Avatar: FC<Props> = ({
         backgroundColor !== 'none' && { backgroundColor: backgroundColor },
         style
       ]}>
-      {(imageUrl !== 'none' && imageUrl.includes('http')) && (
+      { (imageUrl !== 'none' && imageUrl.includes('http')) && (
         <Image source={{ uri: imageUrl }} style={styles.pp} />
-      )}
-      {(imageUrl === 'none') && (
-        <Text style={styles.capital}> {text[0]} </Text>
-      )}
+      ) }
+      { imageUrl === 'none' && (
+        <Text style={styles.capital}>{ text[0] }</Text>
+      ) }
     </View>
   );
 };
 
-export { Avatar };
+export default Avatar;

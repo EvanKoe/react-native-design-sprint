@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import * as React from 'react';
+import { FC } from 'react';
 import {
   StyleSheet,
   TextStyle,
@@ -16,7 +17,7 @@ interface Props {
   titleColor?: string;                  // color to be set on title (less priority than titleStyle)
   titleSize?: number;                   // size of the title (can also be made with titleStyle)
   style?: StyleProp<ViewStyle>;         // style to be applied on the main layout
-  children?: any;                       // components inside the layout
+  children?: React.ReactElement;        // components inside the layout
   scrollable?: boolean;                 // set the scrollable state for the layout
   backgroundColor?: string;             // set a custom background color
 };
@@ -46,12 +47,12 @@ const Layout: FC<Props> = ({
 
   return (
     <ScrollView scrollEnabled={scrollable} style={[{ height: '100%' }, styles.container, style]} >
-      {(title !== '') && (
-        <Title oofsize style={[styles.title, titleStyle]} color={titleColor}> {title} </Title>
+      {title !== '' && (
+        <Title oofsize style={[styles.title, titleStyle]} color={titleColor}>{ title }</Title>
       )}
-      {children}
+      { children }
     </ScrollView>
   );
 };
 
-export {Layout};
+export default Layout;

@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from 'react';
-import React = require('react');
+import * as React from 'react';
+import { FC } from 'react';
 import {
   Text,
   TouchableOpacity,
@@ -59,7 +59,6 @@ const Clickable: FC<Props> = ({
   primaryColor = colors.red700,
   onPress = (e: GestureResponderEvent) => log('You clicked here !'),
   textStyle = {},
-  iconStyle = {},
   style = {},
   children = <></>,
   imageUrl = '',
@@ -144,4 +143,4 @@ const Clickable: FC<Props> = ({
   );
 };
 
-export { Clickable };
+export default Clickable;

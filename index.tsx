@@ -1,14 +1,14 @@
-import { Clickable } from './src/Clickable';
-import { Input } from './src/Input';
-import { LoginForm } from './src/Form';
-import { Layout } from './src/Layout';
+import { default as Clickable } from './src/Clickable';
+import { default as Input } from './src/Input';
+import { default as LoginForm } from './src/Form';
+import { default as Layout } from './src/Layout';
 import colors from './src/colors';
-import { Spacer } from './src/Spacer';
-import { Avatar } from './src/Avatar';
-import { DropDown } from './src/DropDown';
-import { Title } from './src/Title';
+import { default as Spacer } from './src/Spacer';
+import { default as Avatar } from './src/Avatar';
+import { default as DropDown } from './src/DropDown';
+import { default as Title } from './src/Title';
 import { log, toast, capitalize, ftoi } from './src/functions';
-import { SlidingPanel } from './src/SlidingPanel';
+import { default as SlidingPanel } from './src/SlidingPanel';
 
 export {
   Clickable,

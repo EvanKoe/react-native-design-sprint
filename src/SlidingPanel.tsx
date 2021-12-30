@@ -1,9 +1,21 @@
 // import * as React from 'react';
-import React, { useCallback, useEffect, useState } from 'react';
-import { View, StyleSheet, Dimensions, StyleProp, ViewStyle } from 'react-native';
+import * as React from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import {
+  View,
+  StyleSheet,
+  Dimensions,
+  StyleProp,
+  ViewStyle
+} from 'react-native';
 import { PanGestureHandler } from 'react-native-gesture-handler';
-import Animated, { withSpring, useSharedValue, useAnimatedStyle, withTiming, Easing } from 'react-native-reanimated';
-import { Clickable } from './Clickable';
+import Animated, {
+  withSpring,
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing
+} from 'react-native-reanimated';
 
 let WIDTH = Dimensions.get('window').width;
 let HEIGHT = Dimensions.get('window').height;
@@ -157,8 +169,8 @@ const SlidingPanel = ({
           style
         ]}
       >
-        {!topBarDisabled && <View style={[styles.slidingBar, topBarStyle]} />}
-        {children !== <></> && children}
+        { !topBarDisabled && <View style={[styles.slidingBar, topBarStyle]} /> }
+        { children !== <></> && children }
       </Animated.View>
     </PanGestureHandler>
   );
@@ -180,4 +192,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export {SlidingPanel};
+export default SlidingPanel;

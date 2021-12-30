@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react';
+import * as React from 'react';
+import { FC, useState } from 'react';
 import {
   Text,
   StyleSheet,
@@ -64,9 +65,9 @@ const Title: FC<Props> = ({
         {flexDirection: 'row', justifyContent: 'flex-start'}
       }
     >
-      <Text style={[styles.text, style]}>{children}</Text>
+      <Text style={[styles.text, style]}>{ children }</Text>
     </View>
   );
 };
 
-export {Title};
+export default Title;

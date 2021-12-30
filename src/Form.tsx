@@ -1,7 +1,15 @@
-import React, { FC, useEffect, useState } from 'react';
+import * as React from 'react';
+import { FC, useState } from 'react';
 import Clickable from './Clickable';
 import Input from './Input';
-import { View, Text, StyleSheet, ViewStyle, StyleProp, TextStyle } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ViewStyle,
+  StyleProp,
+  TextStyle
+} from 'react-native';
 import colors from './colors';
 
 interface Props {
@@ -20,10 +28,10 @@ interface Props {
   shadowColor?: string;                        // color of the shadow
   borderRadius?: number;                       // border radius (in px) for the main layout, inputs and buttons
   placeholderTop?: string;                     // text to be displayed in the top placeholder
-  placeholderTopStyle?: StyleProp<TextStyle>   // style to be applied to the top placeholder
+  placeholderTopStyle?: StyleProp<TextStyle>;  // style to be applied to the top placeholder
   placeholderBottom?: string;                  // text to be displayed in the bottom placeholder
   placeholderBottomStyle?: StyleProp<TextStyle>// style to be applied to the bottom placeholder
-  children?: any                               // any child to be rendered inside
+  children?: React.ReactElement;               // any child to be rendered inside
 }
 
 const LoginForm: FC<Props> = ({
@@ -45,7 +53,7 @@ const LoginForm: FC<Props> = ({
   placeholderTopStyle = {},
   placeholderBottom = 'Password',
   placeholderBottomStyle = {},
-  children = (<> </>)
+  children = <></>
 }) => {
   const styles = StyleSheet.create({
     container: {
@@ -116,4 +124,4 @@ const LoginForm: FC<Props> = ({
   )
 };
 
-export {LoginForm};
+export default LoginForm;

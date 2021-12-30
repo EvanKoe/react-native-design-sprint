@@ -1,18 +1,21 @@
-import React, { FC, useState } from 'react';
+import * as React from 'react';
+import { FC, useState } from 'react';
 import {
   FlatList,
   StyleProp,
   View,
   ViewStyle,
+  Text,
+  ListRenderItem
 } from 'react-native';
 import Clickable from './Clickable';
 
 interface Props {
   list: any;                              // list of object that will be displayed as dropdown
   title?: string;                         // title that will be displayed on the button
-  renderItem: (e: any) => void;           // function to render each item of the dropdown
-  onOpen?: () => void;                     // function to call when dropdown opened
-  onClose?: () => void;                    // function to call when dropdown closed
+  renderItem: ListRenderItem<any>;        // function to render each item of the dropdown
+  onOpen?: () => void;                    // function to call when dropdown opened
+  onClose?: () => void;                   // function to call when dropdown closed
   style?: StyleProp<ViewStyle>;           // style to be applied on the main layout
   listStyle?: StyleProp<ViewStyle>;       // style to be applied on the list
   buttonStyle?: StyleProp<ViewStyle>;     // style to be applied on the dropdown's button
@@ -24,7 +27,7 @@ interface Props {
 const DropDown: FC<Props> = ({
   list = {},
   title = 'Dropdown',
-  renderItem = (e: any) => {console.log('Lol you forgot the renderItem function')},
+  renderItem = (e: any) => <Text>{e}</Text>,
   onOpen = () => undefined,
   onClose = () => undefined,
   style = {},
@@ -42,7 +45,7 @@ const DropDown: FC<Props> = ({
         primary={(buttonType === 'primary')}
         secondary={(buttonType === 'secondary')}
         disabled={(buttonType === 'disabled')}
-        callback={() => {
+        onPress={() => {
           setListState(listState => !listState)
           if (listState && onOpen)
             return onOpen()
@@ -66,11 +69,11 @@ const DropDown: FC<Props> = ({
         <FlatList
           style={listStyle}
           data={list}
-          renderItem={(item) => renderItem(item)}
+          renderItem={renderItem}
         />
       )}
     </View>
   );
 };
 
-export {DropDown};
+export default DropDown;

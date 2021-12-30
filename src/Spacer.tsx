@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import * as React from 'react';
+import { FC } from "react";
 import { View } from 'react-native';
 
 interface Props {
@@ -22,4 +23,4 @@ const Spacer: FC<Props> = ({
   );
 };
 
-export {Spacer};
+export default Spacer;
