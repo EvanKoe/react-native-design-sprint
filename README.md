@@ -1,3 +1,6 @@
+# Warning !
+I am currently facing issues with this lib on Expo. To everyone who tries this library, do not hesitate to open an issue if you face it too, just to see if I'm the only one who has this problem ! I'm working on it ! Thank you !
+
 # DesignSprint
 
 DesignSprint is a little component library I made while I was learning React Native.
