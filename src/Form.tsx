@@ -15,6 +15,7 @@ import colors from './colors';
 interface Props {
   title?: string;                              // title text
   titleStyle?: StyleProp<TextStyle>;           // style to be applied to the title
+  buttonText?: string;                         // text displayed on the button
   buttonColor?: string;                        // color for the button
   buttonTextColor?: string;                    // color of the button text
   buttonType?: string;                         // primary/secondary/disabled : Clickable options
@@ -37,6 +38,7 @@ interface Props {
 const LoginForm: FC<Props> = ({
   title = '',
   titleStyle = {},
+  buttonText = 'SUBMIT',
   buttonColor = colors.black,
   buttonTextColor = colors.white,
   buttonType = 'primary',
@@ -62,11 +64,14 @@ const LoginForm: FC<Props> = ({
       marginHorizontal: 20,
       paddingHorizontal: 10,
       paddingVertical: 20,
+      minWidth: '80%',
+      minHeight: '50%',
       borderRadius: borderRadius,
     },
     title: {
       fontSize: 30,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      marginBottom: 10
     },
     shadow: {
       borderWidth: 2,
@@ -102,6 +107,7 @@ const LoginForm: FC<Props> = ({
         placeholder={placeholderBottom}
       />
       <Clickable
+        text={buttonText}
         textStyle={{ color: buttonTextColor }}
         shadow={buttonShadow}
         shadowColor={buttonShadowColor}
@@ -111,6 +117,7 @@ const LoginForm: FC<Props> = ({
           buttonSticky === 'center' ? { marginHorizontal: '25%' } :
           { marginHorizontal: 5 },
           { borderRadius: borderRadius },
+          { marginTop: 10 },
           buttonStyle
         ]}
         primary={buttonType === 'primary'}

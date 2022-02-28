@@ -31,14 +31,15 @@ const Avatar: FC<Props> = ({
     container: {
       backgroundColor: colors.blue,
       borderRadius: 1000,
-      height : size,
+      height: size,
       width: size
     },
     capital: {
       fontSize: size * 6 / 10,
       color: colors.white,
       fontWeight: 'bold',
-      textAlign: 'center'
+      textAlign: 'center',
+      margin: 'auto'
     },
     pp: {
       borderRadius: 1000,
