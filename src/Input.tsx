@@ -35,9 +35,9 @@ const Input: FC<Props> = ({
   onCharTyped = (e: string) => {},
   required = false,
   value = '',
-  placeholderColor = colors.grey200,
-  noRegex = false,
   disabled = false,
+  placeholderColor = disabled ? colors.grey400 : colors.grey200,
+  noRegex = false,
   onFocus = () => {}
 }) => {
   const [typedText, setTypedText] = useState('');
@@ -46,9 +46,9 @@ const Input: FC<Props> = ({
   const styles = StyleSheet.create({
     container: {
       backgroundColor: colors.grey700,
-      height: 60,
-      borderRadius: 20,
-      marginHorizontal: 5,
+      height: 50,
+      borderRadius: 7,
+      marginHorizontal: 3,
       marginVertical: 5,
       paddingHorizontal: 30,
       flexDirection: 'row',
@@ -57,8 +57,7 @@ const Input: FC<Props> = ({
       alignItems: 'center'
     },
     textStyle: {
-      fontWeight: 'bold',
-      fontSize: 17,
+      fontSize: 15,
       color: colors.black,
       flex: 1
     },

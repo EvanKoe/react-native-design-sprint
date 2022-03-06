@@ -2,7 +2,7 @@
   "name": "react-native-design-sprint",
   "version": "1.0.37",
   "description": "A fully-customizable component library for react native",
-  "main": "index.ts",
+  "main": "node_modules/expo/AppEntry.js",
   "license": "MIT",
   "keywords": [
     "design",
@@ -20,12 +20,15 @@
     "bottom sheet"
   ],
   "scripts": {
-    "pub": "npm publish"
+    "pub": "npm publish",
+    "start": "expo start"
   },
   "dependencies": {
+    "expo": "^44.0.6",
+    "expo-cli": "^5.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-44.0.0.tar.gz",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.2.0",
