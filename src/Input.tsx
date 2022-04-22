@@ -32,7 +32,7 @@ const Input: FC<Props> = ({
   style = {},
   textStyle = {},
   onFinished = (e: string) => log(e),
-  onCharTyped = (e: string) => {},
+  // onCharTyped = (e: string) => {},
   required = false,
   value = '',
   placeholderColor = colors.grey200,
@@ -82,10 +82,10 @@ const Input: FC<Props> = ({
         ]}
         value={value}
         secureTextEntry={type === 'password'}
-        onChangeText={(text) => {
-          setTypedText(text);
-          return onCharTyped(text);
-        }}
+        // onChangeText={(text) => {
+        //   setTypedText(text);
+        //   return onCharTyped(text);
+        // }}
         onEndEditing={() => {
           setBorderError('transparent');
           if (!noRegex && required && typedText === '')

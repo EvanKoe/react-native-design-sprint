@@ -50,7 +50,7 @@ const LoginForm: FC<Props> = ({
   shadow = 'none',
   shadowColor = colors.grey60,
   onSubmit = (object: any) => console.log('Form callback missing. Please add one.'),
-  borderRadius = 15,
+  borderRadius = 50,
   placeholderTop = 'Email',
   placeholderTopStyle = {},
   placeholderBottom = 'Password',
@@ -63,7 +63,7 @@ const LoginForm: FC<Props> = ({
       marginTop: '25%',
       marginHorizontal: 20,
       paddingHorizontal: 10,
-      paddingVertical: 20,
+      paddingVertical: 15,
       minWidth: '80%',
       minHeight: '50%',
       borderRadius: borderRadius,
@@ -79,6 +79,12 @@ const LoginForm: FC<Props> = ({
       borderBottomColor: shadow.includes('bottom') ? shadowColor : colors.transp,
       borderTopColor: shadow.includes('top') ? shadowColor : colors.transp,
       borderRightColor: shadow.includes('right') ? shadowColor : colors.transp
+    },
+    button: {
+      marginHorizontal: 5,
+      marginTop: 10,
+      paddingVertical: 15,
+      borderRadius: borderRadius
     }
   });
 
@@ -108,23 +114,21 @@ const LoginForm: FC<Props> = ({
       />
       <Clickable
         text={buttonText}
-        textStyle={{ color: buttonTextColor }}
+        textStyle={{ color: buttonTextColor, fontSize: 18 }}
         shadow={buttonShadow}
         shadowColor={buttonShadowColor}
         style={[
           buttonSticky === 'left' ? { marginRight: '50%' } :
           buttonSticky === 'right' ? { marginLeft: '50%' } :
           buttonSticky === 'center' ? { marginHorizontal: '25%' } :
-          { marginHorizontal: 5 },
-          { borderRadius: borderRadius },
-          { marginTop: 10 },
+          styles.button,
           buttonStyle
         ]}
         primary={buttonType === 'primary'}
         secondary={buttonType === 'secondary'}
         disabled={buttonType === 'disabled'}
-        primaryColor={buttonColor}
-        onPress={() => onSubmit({mail, psw})}
+        primaryColor={ buttonColor }
+        onPress={() => onSubmit({ mail, psw })}
       />
       {children}
     </View>

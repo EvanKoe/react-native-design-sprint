@@ -11,9 +11,9 @@ import {
 import Clickable from './Clickable';
 
 interface Props {
-  list: any;                              // list of object that will be displayed as dropdown
+  list?: any;                              // list of object that will be displayed as dropdown
   title?: string;                         // title that will be displayed on the button
-  renderItem: ListRenderItem<any>;        // function to render each item of the dropdown
+  renderItem?: ListRenderItem<any>;        // function to render each item of the dropdown
   onOpen?: () => void;                    // function to call when dropdown opened
   onClose?: () => void;                   // function to call when dropdown closed
   style?: StyleProp<ViewStyle>;           // style to be applied on the main layout
@@ -25,7 +25,7 @@ interface Props {
 }
 
 const DropDown: FC<Props> = ({
-  list = {},
+  list = [],
   title = 'Dropdown',
   renderItem = (e: any) => <Text>{e}</Text>,
   onOpen = () => undefined,
