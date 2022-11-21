@@ -1,6 +1,6 @@
 # Warning !
 
-I am currently facing issues with this lib on Expo. To everyone who tries this library, do not hesitate to open an issue if you face it too, just to see if I'm the only one who has this problem ! I'm working on it ! Thank you !
+### This lib is deprecated. It will soon be replaced with [react-native-ready-comps](https://github.com/EvanKoe/react-native-ready-comps.git) which will almost do the same, but from bare react-native (without expo, that caused many problems on react-native-design-sprint). React-native-ready-comps will also be lighter, and it will be easier to contribute (I'll add a set of rules to respect before creating pull requests, add a coding style ...).
 
 # DesignSprint
 
